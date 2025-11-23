@@ -127,13 +127,11 @@
   }
 }
 
-
 /* Flip card styles */
 .flip-card {
   position: relative;
   width: 200px;
   height: 200px;
-  transform-style: preserve-3d;
 }
 
 .flip-card-inner {

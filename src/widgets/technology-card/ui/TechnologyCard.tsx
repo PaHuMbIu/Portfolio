@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode, useState } from "react";
-// import { Button } from "@/shared/ui";
 
 interface TechnologyCardProps {
   icon: ReactNode;
