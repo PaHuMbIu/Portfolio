@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import { ReactNode } from "react";
 import { Merriweather } from "next/font/google";
+import { Header } from "@/widgets";
 
 const merriweather = Merriweather({
   subsets: ["latin", "cyrillic"],
@@ -22,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={merriweather.variable}>
-      <body>{children}</body>
+      <body>
+        <main>
+          <Header />
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

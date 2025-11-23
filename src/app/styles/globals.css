@@ -5,6 +5,8 @@
 @import "./animations.css";
 @import "./base.css";
 
+@custom-variant dark (&:is(.dark *));
+
 /* @custom-variant dark (&: is(.dark *)); */
 
 @theme inline {
@@ -155,7 +157,7 @@
   backdrop-filter: blur(10px);
   padding: 1.25rem;
   border: 3px solid #21212d;
-  border-radius: 5px;
+  border-radius: 12px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
