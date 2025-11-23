@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../app/styles/globals.css"
+import "./styles/globals.css";
 import { ReactNode } from "react";
 import { Merriweather } from "next/font/google";
 
@@ -22,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={merriweather.variable}>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

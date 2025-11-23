@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode } from "react";
-import { Button } from "@/shared/ui";
+import { ReactNode, useState } from "react";
+// import { Button } from "@/shared/ui";
 
 interface TechnologyCardProps {
   icon: ReactNode;
@@ -9,11 +9,15 @@ interface TechnologyCardProps {
 }
 
 export const TechnologyCard = ({ icon, description }: TechnologyCardProps) => {
+  const [flipCard, setFlipCard] = useState(false);
+
   return (
-    <article className="p-5 border border-white/10 flex justify-center items-center rounded-[5px] w-[260px] h-[230px] cursor-pointer">
-      <div className="w-[128px] h-[128px]">{icon}</div>
-    </article>
-    //   </Button>
-    // <Button variant="reset" size="reset">
+    <li onClick={() => setFlipCard(!flipCard)}>
+      <article className="bg-[#FFFFFF0D] transition-all duration-300 backdrop-blur-[10px] hover-card p-5 border-[#21212d] border-3 flex justify-center items-center rounded-[5px] w-[200px] h-[200px] shadow-sm ">
+        {flipCard ?
+          <p>{description}</p>
+        : <div className="w-[100px] h-[100px]">{icon}</div>}
+      </article>
+    </li>
   );
 };

@@ -1,17 +1,65 @@
 "use client";
 import { TechnologyCard } from "@/widgets";
-import { ReactIcon } from "@/shared/assets";
+import {
+  ReactIcon,
+  JavaScriptIcon,
+  TypeScriptIcon,
+  ShadcnIcon,
+  TailwindIcon,
+  GitIcon,
+  HtmlIcon,
+  CssIcon,
+  ScssIcon,
+  NextJsIcon,
+  // JestIcon,
+  // DockerIcon,
+  // ViteIcon,
+  PrettierIcon,
+  EslintIcon,
+  // ReduxIcon,
+  ZustandIcon,
+} from "@/shared/assets";
+import SplitText from "@/shared/ui/SplitText";
 
 export default function Home() {
   return (
-    <div className="p-3">
-      <header></header>
+    <div className="p-3 relative h-screen">
+      <div className="stars"></div>
+      <div className="stars2"></div>
+      <div className="stars3"></div>
 
-      <div className="flex gap-x-2.5 justify-center pt-20">
-        <TechnologyCard icon={<ReactIcon />} description={""} />
-        <TechnologyCard icon={<ReactIcon />} description={""} />
-        <TechnologyCard icon={<ReactIcon />} description={""} />
-        <TechnologyCard icon={<ReactIcon />} description={""} />
+      <div className="text-center w-full">
+        <SplitText
+          text="Hello, my name is Pavel, I'm a Frontend developer"
+          className="text-2xl font-semibold text-white"
+          delay={30}
+          duration={0.2}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
+      </div>
+
+      <div className="flex justify-center items-center pt-20">
+        <ul className="flex flex-wrap gap-3.5 max-w-[1100px] justify-center">
+          <TechnologyCard icon={<ReactIcon />} description={""} />
+          <TechnologyCard icon={<JavaScriptIcon />} description={""} />
+          <TechnologyCard icon={<TypeScriptIcon />} description={""} />
+          <TechnologyCard icon={<HtmlIcon />} description={""} />
+          <TechnologyCard icon={<CssIcon />} description={""} />
+          <TechnologyCard icon={<ScssIcon />} description={""} />
+          <TechnologyCard icon={<GitIcon />} description={""} />
+          <TechnologyCard icon={<TailwindIcon />} description={""} />
+          <TechnologyCard icon={<NextJsIcon />} description={""} />
+          <TechnologyCard icon={<ShadcnIcon />} description={""} />
+          <TechnologyCard icon={<PrettierIcon />} description={""} />
+          <TechnologyCard icon={<EslintIcon />} description={""} />
+          <TechnologyCard icon={<ZustandIcon />} description={""} />
+        </ul>
       </div>
     </div>
   );
