@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 export const PrettierIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={125} height={125} viewBox="0 0 210 210" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" width={100} height={100} viewBox="0 0 210 210" {...props}>
     <title>{"prettier-icon-light"}</title>
     <g fill="none" fillRule="evenodd">
       <g transform="translate(0 200)">

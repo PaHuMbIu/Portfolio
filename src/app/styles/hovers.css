@@ -1,5 +1,14 @@
+.hover-card {
+  transition: transform 0.3s ease;
+}
+
 .hover-card:hover {
   transform: translateY(-10px) scale(1.05);
+}
+
+.hover-card:hover .flip-card-front,
+.hover-card:hover .flip-card-back {
   border-color: rgba(138, 43, 226, 0.8);
   box-shadow: 0 12px 40px rgba(138, 43, 226, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }

@@ -30,7 +30,7 @@ export default function Home() {
 
       <div className="text-center w-full">
         <SplitText
-          text="Hello, my name is Pavel, I'm a Frontend developer"
+          text="Hello, my name is Pavel, I'm Frontend developer"
           className="text-2xl font-semibold text-white"
           delay={30}
           duration={0.2}
@@ -46,7 +46,7 @@ export default function Home() {
 
       <div className="flex justify-center items-center pt-20">
         <ul className="flex flex-wrap gap-3.5 max-w-[1100px] justify-center">
-          <TechnologyCard icon={<ReactIcon />} description={""} />
+          <TechnologyCard icon={<ReactIcon />} description={"141414124124"} />
           <TechnologyCard icon={<JavaScriptIcon />} description={""} />
           <TechnologyCard icon={<TypeScriptIcon />} description={""} />
           <TechnologyCard icon={<HtmlIcon />} description={""} />
