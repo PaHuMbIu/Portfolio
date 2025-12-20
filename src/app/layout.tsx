@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import { ReactNode } from "react";
 import { Merriweather } from "next/font/google";
-import { Header } from "@/widgets";
+import { Header, Sidebar } from "@/widgets";
 
 const merriweather = Merriweather({
   subsets: ["latin", "cyrillic"],
@@ -26,7 +26,10 @@ export default function RootLayout({
       <body>
         <main>
           <Header />
-          {children}
+          <div className="flex w-full">
+            <Sidebar />
+            {children}
+          </div>
         </main>
       </body>
     </html>

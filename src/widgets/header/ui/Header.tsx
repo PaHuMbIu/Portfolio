@@ -10,17 +10,6 @@ export const Header = () => {
       <div className="relative mx-auto">
         <div className="relative overflow-hidden">
           <nav className="relative flex items-center justify-between px-8 py-4">
-            {/* <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-              <div className="relative">
-                <Code2 className="w-6 h-6 text-white group-hover:text-purple-400 transition-colors duration-300" />
-                <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              <span className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors duration-300 tracking-wide">
-                Frontend
-              </span>
-            </Link> */}
-
             <div className="flex items-center gap-2 w-full justify-end">
               <Link
                 href="/projects"
@@ -37,25 +26,29 @@ export const Header = () => {
 
               <div className="w-px h-6 bg-neutral-700 mx-1" />
 
-              <Link
-                href="https://t.me/PaHuMbIu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 text-white/90 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative group"
-              >
-                <Send className="w-5 h-5 group-hover:text-purple-400 transition-colors duration-200" />
-                <span className="absolute inset-0 border border-purple-500/0 group-hover:border-purple-500/50 rounded-md transition-all duration-300" />
-              </Link>
+              <Button>
+                <Link
+                  href="https://t.me/PaHuMbIu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 text-white/90 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative group"
+                >
+                  <Send className="w-5 h-5 group-hover:text-purple-400 transition-colors duration-200" />
+                  <span className="absolute inset-0 border border-purple-500/0 group-hover:border-purple-500/50 rounded-md transition-all duration-300" />
+                </Link>
+              </Button>
 
-              <Link
-                href="https://github.com/PaHuMbIu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 text-white/90 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative group"
-              >
-                <Github className="w-5 h-5 group-hover:text-purple-400 transition-colors duration-200" />
-                <span className="absolute inset-0 border border-purple-500/0 group-hover:border-purple-500/50 rounded-md transition-all duration-300" />
-              </Link>
+              <Button>
+                <Link
+                  href="https://github.com/PaHuMbIu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 text-white/90 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 relative group"
+                >
+                  <Github className="w-5 h-5 group-hover:text-purple-400 transition-colors duration-200" />
+                  <span className="absolute inset-0 border border-purple-500/0 group-hover:border-purple-500/50 rounded-md transition-all duration-300" />
+                </Link>
+              </Button>
             </div>
           </nav>
 
