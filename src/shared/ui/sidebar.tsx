@@ -3,7 +3,6 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { PanelLeftIcon } from "lucide-react";
 
 import { useIsMobile } from "@/shared/hooks/use-mobile";
 import { cn } from "@/lib/utils";
@@ -230,7 +229,10 @@ function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+          className={cn(
+            "bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm",
+            "border-r border-purple-400/20 custom-sidebar-styled pt-[68px]! bg-[rgba(138, 43, 226, 0.031)]! group px-5 py-[10px] z-40",
+          )}
         >
           {children}
         </div>
@@ -252,15 +254,26 @@ function SidebarTrigger({
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       variant="ghost"
-      size="icon"
-      className={cn("size-7", className)}
+      size="icon-xl"
+      className={cn(
+        "absolute right-[-13px] top-[77px] z-50",
+        "transition-all duration-300 ease-out",
+        "rounded-full bg-purple-500/20 backdrop-blur-sm",
+        "border border-purple-400/30 shadow-lg shadow-purple-500/20",
+        "hover:bg-purple-500/30 hover:text-purple-300 hover:border-purple-400/50",
+        "hover:shadow-purple-500/40 hover:scale-110 active:scale-95",
+        "text-white",
+        "p-2 w-7 h-7 flex items-center justify-center",
+        "group-hover:opacity-100 group-hover:translate-x-0 opacity-0",
+        className,
+      )}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
       }}
       {...props}
     >
-      {children || <PanelLeftIcon />}
+      {children}
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
@@ -321,7 +334,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-header"
       data-sidebar="header"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-row gap-3 p-0 pt-1 items-center", className)}
       {...props}
     />
   );
@@ -368,7 +381,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-group"
       data-sidebar="group"
-      className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
+      className={cn("relative flex w-full min-w-0 flex-col p-0", className)}
       {...props}
     />
   );
@@ -445,7 +458,11 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
     <li
       data-slot="sidebar-menu-item"
       data-sidebar="menu-item"
-      className={cn("group/menu-item relative", className)}
+      className={cn(
+        "group/menu-item relative",
+        "text-white w-full hover:bg-transparent transition-default",
+        className,
+      )}
       {...props}
     />
   );
