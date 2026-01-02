@@ -10,7 +10,7 @@ import {
   ScssIcon,
   NextJsIcon,
   ZustandIcon,
-} from "@/shared/assets";
+} from "@/shared/assets/technologies";
 
 export interface ITechnology {
   icon: ReactNode;

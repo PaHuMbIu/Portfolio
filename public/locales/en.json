@@ -20,5 +20,11 @@
     "tailwindcssDescription": "is a utility-first CSS framework",
     "nextjsDescription": "is a React framework for production applications",
     "zustandDescription": "is a lightweight library for managing state"
+  },
+  "home": {
+    "title": "Hello, my name is Pavel. I'm a frontend developer",
+    "subtitle": "I create modern, responsive web applications with attention to detail and user experience",
+    "technologiesTitle": "Technologies I use:",
+    "technologiesDescription": "Click on any card to learn more"
   }
 }

@@ -10,10 +10,6 @@
   pointer-events: none;
   z-index: 0;
   background-repeat: repeat;
-  /* transform: translateZ(0); */
-  /* will-change: background-position; */
-  /* image-rendering: crisp-edges; */
-  /* image-rendering: pixelated; */
 }
 
 .stars {
