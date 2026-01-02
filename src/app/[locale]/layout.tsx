@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
 import "@/app/styles/globals.css";
 import { CSSProperties, ReactNode } from "react";
-import { Merriweather } from "next/font/google";
+// import { Merriweather } from "next/font/google";
 import { SidebarNav, Header } from "@/widgets";
 import { SidebarProvider } from "@/shared/ui/sidebar";
 import { cookies } from "next/headers";
 import { EXPANDED_SIDEBAR_WIDTH, COLLAPSED_SIDEBAR_WIDTH } from "@/shared/constants";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { Inter } from "next/font/google";
 
-const merriweather = Merriweather({
+// const merriweather = Merriweather({
+//   subsets: ["latin", "cyrillic"],
+//   weight: ["400", "700"],
+//   variable: "--font-merriweather",
+//   display: "swap",
+// });
+
+const inter = Inter({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "700"],
-  variable: "--font-merriweather",
+  weight: ["400", "500", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -34,7 +42,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   const locale = (await params).locale;
 
   return (
-    <html lang={locale} className={merriweather.variable}>
+    <html lang={locale} className={inter.variable}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Header />

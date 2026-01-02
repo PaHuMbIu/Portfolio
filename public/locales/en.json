@@ -8,5 +8,17 @@
     "Projects": "Projects",
     "Tools": "Tools",
     "About me": "About me"
+  },
+  "technologyCard": {
+    "reactDescription": "is a library for creating user interfaces",
+    "javascriptDescription": "is a programming language for web development",
+    "typescriptDescription": "is a typed superset of JavaScript",
+    "htmlDescription": "is a markup language for creating web pages",
+    "cssDescription": "is a language for styling web pages",
+    "scssDescription": "is a CSS preprocessor with extended functionality",
+    "gitDescription": "is a version control system for tracking changes",
+    "tailwindcssDescription": "is a utility-first CSS framework",
+    "nextjsDescription": "is a React framework for production applications",
+    "zustandDescription": "is a lightweight library for managing state"
   }
 }

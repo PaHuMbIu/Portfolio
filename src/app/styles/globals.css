@@ -44,10 +44,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@theme {
-  --font-merriweather: var(--font-merriweather);
-}
-
 :root {
   --radius: 0.625rem;
   --card: oklch(1 0 0);
@@ -123,6 +119,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter);
   }
 }
 

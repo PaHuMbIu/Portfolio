@@ -8,5 +8,17 @@
     "Projects": "Проекты",
     "Tools": "Инструменты",
     "About me": "Обо мне"
+  },
+  "technologyCard": {
+    "reactDescription": "библиотека для создания пользовательских интерфейсов",
+    "javascriptDescription": "язык программирования для веб-разработки",
+    "typescriptDescription": "типизированное надмножество JavaScript",
+    "htmlDescription": "язык разметки для создания веб-страниц",
+    "cssDescription": "язык стилей для оформления веб-страниц",
+    "scssDescription": "препроцессор CSS с расширенным функционалом",
+    "gitDescription": "система контроля версий для отслеживания изменений",
+    "tailwindcssDescription": "утилитарный CSS-фреймворк",
+    "nextjsDescription": "React-фреймворк для продакшн-приложений",
+    "zustandDescription": "легковесная библиотека для управления состоянием"
   }
 }

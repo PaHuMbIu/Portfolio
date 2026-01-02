@@ -1,77 +1,11 @@
 "use client";
 import { TechnologyCard } from "@/widgets";
-import {
-  ReactIcon,
-  JavaScriptIcon,
-  TypeScriptIcon,
-  ShadcnIcon,
-  TailwindIcon,
-  GitIcon,
-  HtmlIcon,
-  CssIcon,
-  ScssIcon,
-  NextJsIcon,
-  PrettierIcon,
-  EslintIcon,
-  ZustandIcon,
-} from "@/shared/assets";
-
-const technologies = [
-  {
-    icon: <ReactIcon />,
-    description: "141414124124",
-  },
-  {
-    icon: <JavaScriptIcon />,
-    description: "",
-  },
-  {
-    icon: <TypeScriptIcon />,
-    description: "",
-  },
-  {
-    icon: <HtmlIcon />,
-    description: "",
-  },
-  {
-    icon: <CssIcon />,
-    description: "",
-  },
-  {
-    icon: <ScssIcon />,
-    description: "",
-  },
-  {
-    icon: <GitIcon />,
-    description: "",
-  },
-  {
-    icon: <TailwindIcon />,
-    description: "",
-  },
-  {
-    icon: <NextJsIcon />,
-    description: "",
-  },
-  {
-    icon: <ShadcnIcon />,
-    description: "",
-  },
-  {
-    icon: <PrettierIcon />,
-    description: "",
-  },
-  {
-    icon: <EslintIcon />,
-    description: "",
-  },
-  {
-    icon: <ZustandIcon />,
-    description: "",
-  },
-];
+import { TECHNOLOGIES_DATA } from "@/widgets/technology-card/model/technologies";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("technologyCard");
+
   return (
     <div className="p-3 relative h-screen w-full">
       <div className="stars"></div>
@@ -80,11 +14,13 @@ export default function Home() {
 
       <div className="flex justify-center items-center pt-10">
         <ul className="flex flex-wrap gap-3.5 max-w-[1100px] justify-center">
-          {technologies.map((technology, index) => (
+          {TECHNOLOGIES_DATA.map((technology, index) => (
             <TechnologyCard
               key={index}
               icon={technology.icon}
-              description={technology.description}
+              technologyName={technology.technologyName}
+              description={t(technology.descriptionKey)}
+              url={technology.url}
             />
           ))}
         </ul>
