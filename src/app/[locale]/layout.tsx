@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/app/styles/globals.css";
 import { CSSProperties, ReactNode } from "react";
 // import { Merriweather } from "next/font/google";
-import { SidebarNav, Header } from "@/widgets";
+import { SidebarNav, Header, LayoutStar } from "@/widgets";
 import { SidebarProvider } from "@/shared/ui/sidebar";
 import { cookies } from "next/headers";
 import { EXPANDED_SIDEBAR_WIDTH, COLLAPSED_SIDEBAR_WIDTH } from "@/shared/constants";
@@ -58,7 +58,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           >
             <div className="flex w-full">
               <SidebarNav />
-              {children}
+              <LayoutStar>{children}</LayoutStar>
             </div>
           </SidebarProvider>
         </NextIntlClientProvider>

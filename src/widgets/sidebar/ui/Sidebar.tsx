@@ -18,13 +18,17 @@ import { SIDEBAR_ITEMS } from "../model/sidebarItems";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 export const SidebarNav = () => {
   const t = useTranslations("sidebar");
   const { open, toggleSidebar } = useSidebar();
+  const locale = useLocale();
   const pathname = usePathname();
 
-  const isActive = (href: string) => pathname == href;
+  const pathnameWithoutLocale = pathname.replace(/^\/(ru|en)/, "") || "/";
+
+  const isActive = (href: string) => pathnameWithoutLocale === href;
 
   const chevronsDirection = open ? <ChevronsLeft /> : <ChevronsRight />;
 
@@ -57,35 +61,39 @@ export const SidebarNav = () => {
         <SidebarGroup className="p-0">
           <SidebarGroupContent>
             <SidebarMenu>
-              {SIDEBAR_ITEMS.map((item) => (
-                <SidebarMenuItem
-                  className="text-white w-full hover:bg-transparent transition-default"
-                  key={item.label}
-                >
-                  <SidebarMenuButton className="h-[40px]! p-0!">
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "sidebar-item flex items-center gap-x-1 rounded-md w-full h-full",
-                        isActive(item.href) && "sidebar-item-active",
-                      )}
-                    >
-                      <item.icon className="sidebar-item-icon w-6! h-6! text-white shrink-0 pl-1" />
+              {SIDEBAR_ITEMS.map((item) => {
+                const hrefWithLocale = `/${locale}${item.href}`;
 
-                      <span
+                return (
+                  <SidebarMenuItem
+                    className="text-white w-full hover:bg-transparent transition-default"
+                    key={item.label}
+                  >
+                    <SidebarMenuButton className="h-[40px]! p-0!">
+                      <Link
+                        href={hrefWithLocale}
                         className={cn(
-                          "sidebar-item-text text-base font-medium whitespace-nowrap text-white transition-default p-0!",
-                          open ?
-                            "opacity-100 translate-x-0"
-                          : "opacity-0 -translate-x-2 pointer-events-none",
+                          "sidebar-item flex items-center gap-x-1 rounded-md w-full h-full",
+                          isActive(item.href) && "sidebar-item-active",
                         )}
                       >
-                        {t(item.label)}
-                      </span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+                        <item.icon className="sidebar-item-icon w-6! h-6! text-white shrink-0 pl-1" />
+
+                        <span
+                          className={cn(
+                            "sidebar-item-text text-base font-medium whitespace-nowrap text-white transition-default p-0!",
+                            open ?
+                              "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-2 pointer-events-none",
+                          )}
+                        >
+                          {t(item.label)}
+                        </span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
