@@ -1,0 +1,12 @@
+{
+  "header": {
+    "projects": "Projects"
+  },
+  "sidebar": {
+    "Home page": "Home page",
+    "Games": "Games",
+    "Projects": "Projects",
+    "Tools": "Tools",
+    "About me": "About me"
+  }
+}

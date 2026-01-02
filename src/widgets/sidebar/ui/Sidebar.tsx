@@ -17,12 +17,16 @@ import {
 import { SIDEBAR_ITEMS } from "../model/sidebarItems";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export const SidebarNav = () => {
+  const t = useTranslations("sidebar");
   const { open, toggleSidebar } = useSidebar();
-
   const pathname = usePathname();
+
   const isActive = (href: string) => pathname == href;
+
+  const chevronsDirection = open ? <ChevronsLeft /> : <ChevronsRight />;
 
   return (
     <Sidebar
@@ -45,9 +49,7 @@ export const SidebarNav = () => {
             "group-hover:opacity-100 group-hover:translate-x-0 opacity-0",
           )}
         >
-          {open ?
-            <ChevronsLeft />
-          : <ChevronsRight />}
+          {chevronsDirection}
         </SidebarTrigger>
       </SidebarHeader>
 
@@ -78,7 +80,7 @@ export const SidebarNav = () => {
                           : "opacity-0 -translate-x-2 pointer-events-none",
                         )}
                       >
-                        {item.label}
+                        {t(item.label)}
                       </span>
                     </Link>
                   </SidebarMenuButton>

@@ -1,10 +1,13 @@
 "use client";
 
-import { Button } from "@/shared/ui";
 import { Github, Send } from "lucide-react";
 import Link from "next/link";
+import { LanguageSwitcher } from "@/features/language-switch/ui/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export const Header = () => {
+  const t = useTranslations("header");
+
   return (
     <header className="sticky top-0 left-0 right-0 pt-0 z-50 bg-[#8A2BE208] backdrop-blur-xl">
       <div className="relative mx-auto">
@@ -15,18 +18,13 @@ export const Header = () => {
                 href="/projects"
                 className="px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors duration-200 relative group"
               >
-                Проекты
+                {t("projects")}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300" />
               </Link>
 
-              <Button
-                hover="purpleHover"
-                className=" p-2.5! max-w-9 max-h-9 text-white/90 flex items-center justify-center"
-              >
-                En
-              </Button>
+              <LanguageSwitcher />
 
-              <div className="w-px h-6 bg-neutral-700 mx-1" />
+              <hr className="w-px h-6 bg-neutral-700 mx-1" />
 
               <Link
                 href="https://t.me/PaHuMbIu"
@@ -56,3 +54,38 @@ export const Header = () => {
     </header>
   );
 };
+
+// "use client";
+
+// import { Button } from "@/shared/ui";
+// import { useLocale } from "next-intl";
+// import { usePathname, useRouter } from "next/navigation";
+
+// export const LanguageSwitcher = () => {
+//   const locale = useLocale();
+//   const router = useRouter();
+//   const pathname = usePathname();
+
+//   const detectedLanguage = locale === "ru" ? "Ru" : "En";
+
+//   // console.log(locale); // /ru/projects
+
+//   const handleToggleLang = () => {
+//     const nextLocale = locale === "ru" ? "en" : "ru";
+
+//     console.log("Next Locale: ", nextLocale); // en всегда
+//     console.log("Before: ", { pathname, locale: nextLocale });
+//     router.replace(pathname, { locale: nextLocale });
+//     console.log("After: ", { pathname, locale: nextLocale });
+//   };
+
+//   return (
+//     <Button
+//       onClick={handleToggleLang}
+//       hover="purpleHover"
+//       className=" p-2.5! max-w-9 max-h-9 text-white/90 flex items-center justify-center"
+//     >
+//       {detectedLanguage}
+//     </Button>
+//   );
+// };

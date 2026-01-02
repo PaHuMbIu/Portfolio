@@ -1,0 +1,12 @@
+{
+  "header": {
+    "projects": "Проекты"
+  },
+  "sidebar": {
+    "Home page": "Главная",
+    "Games": "Игры",
+    "Projects": "Проекты",
+    "Tools": "Инструменты",
+    "About me": "Обо мне"
+  }
+}
