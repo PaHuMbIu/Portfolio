@@ -4,6 +4,7 @@ import { TECHNOLOGIES_DATA } from "@/widgets/technology-card/model/technologies"
 import { TechnologyCard } from "@/widgets/technology-card/ui/TechnologyCard";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { itemVariants, listVariants } from "../animations/technologyList.variants";
 
 export const HomeTechnologies = () => {
   const t = useTranslations("home");
@@ -28,30 +29,10 @@ export const HomeTechnologies = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.1,
-            },
-          },
-        }}
+        variants={listVariants}
       >
         {TECHNOLOGIES_DATA.map((technology, index) => (
-          <motion.li
-            key={index}
-            variants={{
-              hidden: { opacity: 0, y: 30, scale: 0.9 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                },
-              },
-            }}
-          >
+          <motion.li key={index} variants={itemVariants}>
             <TechnologyCard
               description={tTechnologyCard(technology.descriptionKey)}
               {...technology}

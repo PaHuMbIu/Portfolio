@@ -7,3 +7,5 @@ export * from "./skeleton";
 export * from "./separator";
 export * from "./tooltip";
 export * from "./input";
+export * from "./Loader";
+export * from "./TextType";

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/styles/globals.css";
 import { CSSProperties, ReactNode } from "react";
-// import { Merriweather } from "next/font/google";
 import { SidebarNav, Header, LayoutStar } from "@/widgets";
 import { SidebarProvider } from "@/shared/ui/sidebar";
 import { cookies } from "next/headers";
@@ -9,13 +8,6 @@ import { EXPANDED_SIDEBAR_WIDTH, COLLAPSED_SIDEBAR_WIDTH } from "@/shared/consta
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Inter } from "next/font/google";
-
-// const merriweather = Merriweather({
-//   subsets: ["latin", "cyrillic"],
-//   weight: ["400", "700"],
-//   variable: "--font-merriweather",
-//   display: "swap",
-// });
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -58,6 +50,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           >
             <div className="flex w-full">
               <SidebarNav />
+
               <LayoutStar>{children}</LayoutStar>
             </div>
           </SidebarProvider>
