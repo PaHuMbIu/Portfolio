@@ -162,3 +162,10 @@
 .flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
+
+/* Technologies grid */
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+}

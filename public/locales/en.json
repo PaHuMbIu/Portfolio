@@ -19,7 +19,9 @@
     "gitDescription": "is a version control system for tracking changes",
     "tailwindcssDescription": "is a utility-first CSS framework",
     "nextjsDescription": "is a React framework for production applications",
-    "zustandDescription": "is a lightweight library for managing state"
+    "zustandDescription": "is a lightweight library for managing state",
+    "viteDescription": "is a build tool for modern web applications",
+    "reduxDescription": "is a state management library for JavaScript applications"
   },
   "home": {
     "title": "Hello, my name is Pavel. I'm a frontend developer",

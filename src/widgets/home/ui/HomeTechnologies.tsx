@@ -25,7 +25,7 @@ export const HomeTechnologies = () => {
       </div>
 
       <motion.ul
-        className="flex flex-wrap gap-4 md:gap-5 justify-center w-full"
+        className="grid grid-cols-[repeat(auto-fit,200px)] justify-center gap-4 md:gap-5 w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}

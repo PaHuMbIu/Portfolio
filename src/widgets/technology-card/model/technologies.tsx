@@ -10,6 +10,8 @@ import {
   ScssIcon,
   NextJsIcon,
   ZustandIcon,
+  ViteIcon,
+  ReduxIcon,
 } from "@/shared/assets/technologies";
 
 export interface ITechnology {
@@ -79,5 +81,17 @@ export const TECHNOLOGIES_DATA: ITechnology[] = [
     technologyName: "Zustand",
     descriptionKey: "zustandDescription",
     url: "https://zustand-demo.pmnd.rs",
+  },
+  {
+    icon: <ViteIcon />,
+    technologyName: "Vite",
+    descriptionKey: "viteDescription",
+    url: "https://vitejs.dev",
+  },
+  {
+    icon: <ReduxIcon />,
+    technologyName: "Redux",
+    descriptionKey: "reduxDescription",
+    url: "https://redux.js.org",
   },
 ];
