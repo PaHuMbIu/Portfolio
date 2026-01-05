@@ -20,7 +20,7 @@ export const TechnologyCard = ({ icon, technologyName, description, url }: Techn
     <article
       onClick={handleFlipCard}
       className={cn(
-        "flip-card cursor-pointer perspective-[1000px] hover-card shadow-sm",
+        "flip-card cursor-pointer perspective-[1000px] hover-card shadow-sm max-w-[200px]",
         flipCard && "flipped",
       )}
     >

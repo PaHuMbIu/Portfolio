@@ -1,11 +1,34 @@
-/* Slider track*/
+/* Slider track */
 .swiper-track {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-
   padding-top: 48px !important;
+  margin: 0 auto;
+}
 
+/* Track width based on: n * 200px + (n-1) * 20px */
+/* 2 slides */
+.technology-slider .swiper-track {
+  max-width: 420px;
+}
+
+/* 3 slides */
+@media (min-width: 900px) {
+  .technology-slider .swiper-track {
+    max-width: 640px;
+  }
+}
+
+/* 4 slides */
+@media (min-width: 1260px) {
+  .technology-slider .swiper-track {
+    max-width: 860px;
+  }
+}
+
+/* 5 slides */
+@media (min-width: 1440px) {
+  .technology-slider .swiper-track {
+    max-width: 1080px;
+  }
 }
 
 /* Slider pagination */

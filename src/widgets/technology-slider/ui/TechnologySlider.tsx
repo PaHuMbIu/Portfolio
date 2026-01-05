@@ -25,7 +25,7 @@ export const TechnologySlider = () => {
         className="swiper-track"
         modules={[Autoplay, Pagination]}
         loop={true}
-        spaceBetween={0}
+        spaceBetween={20}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
@@ -34,24 +34,10 @@ export const TechnologySlider = () => {
         pagination={{
           clickable: true,
         }}
-        slidesPerView={1}
-        breakpoints={{
-          768: {
-            slidesPerView: 2,
-          },
-          990: {
-            slidesPerView: 2,
-          },
-          1240: {
-            slidesPerView: 3,
-          },
-          1490: {
-            slidesPerView: 5,
-          },
-        }}
+        slidesPerView="auto"
       >
         {TECHNOLOGIES_DATA.map((technology, index) => (
-          <SwiperSlide key={index} className="block!">
+          <SwiperSlide key={index} className="max-w-[200px]!">
             <motion.div variants={itemVariants}>
               <TechnologyCard
                 description={tTechnologyCard(technology.descriptionKey)}
