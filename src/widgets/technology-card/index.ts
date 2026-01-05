@@ -1,2 +1,3 @@
 export { TechnologyCard } from "./ui/TechnologyCard";
-export { TECHNOLOGIES_DATA } from "./model/technologies";
+export { TechnologuCardSmall } from "./ui/TechnologuCardSmall";
+export { TECHNOLOGIES_DATA, TECHNOLOGIES_LEARNING_DATA } from "./model/technologies";

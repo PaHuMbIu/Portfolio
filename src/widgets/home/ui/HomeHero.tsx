@@ -8,7 +8,7 @@ export const HomeHero = () => {
   const t = useTranslations("home");
 
   return (
-    <div className="flex flex-col items-center max-w-4xl w-full mb-12">
+    <div className="flex flex-col items-center max-w-4xl w-full mb-12 mx-auto">
       <motion.h1
         className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6"
         variants={titleVariants}

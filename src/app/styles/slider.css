@@ -1,0 +1,53 @@
+/* Slider track*/
+.swiper-track {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  padding-top: 48px !important;
+
+}
+
+/* Slider pagination */
+.technology-slider .swiper-pagination {
+  position: relative;
+  margin-top: 12px;
+  bottom: auto;
+}
+
+/* Inactive pagination bullets */
+.technology-slider .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for inactive bullets */
+.technology-slider .swiper-pagination-bullet:hover {
+  background: rgba(196, 181, 253, 0.6);
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(138, 43, 226, 0.4);
+}
+
+/* Active pagination bullet */
+.technology-slider .swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(147, 51, 234, 0.9));
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 2px 12px rgba(138, 43, 226, 0.6),
+              0 0 20px rgba(138, 43, 226, 0.3);
+  transform: scale(1.2);
+}
+
+/* Disable hover effect for active bullet */
+.technology-slider .swiper-pagination-bullet-active:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(147, 51, 234, 0.9));
+  transform: scale(1.2);
+  box-shadow: 0 2px 12px rgba(138, 43, 226, 0.6),
+              0 0 20px rgba(138, 43, 226, 0.3);
+}
+

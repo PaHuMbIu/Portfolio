@@ -12,12 +12,20 @@ import {
   ZustandIcon,
   ViteIcon,
   ReduxIcon,
+  DockerIcon,
+  JestIcon,
 } from "@/shared/assets/technologies";
 
 export interface ITechnology {
   icon: ReactNode;
   technologyName: string;
   descriptionKey: string;
+  url: string;
+}
+
+export interface ITechnologyLearning {
+  icon: ReactNode;
+  technologyName: string;
   url: string;
 }
 
@@ -93,5 +101,18 @@ export const TECHNOLOGIES_DATA: ITechnology[] = [
     technologyName: "Redux",
     descriptionKey: "reduxDescription",
     url: "https://redux.js.org",
+  },
+];
+
+export const TECHNOLOGIES_LEARNING_DATA: ITechnologyLearning[] = [
+  {
+    icon: <DockerIcon />,
+    technologyName: "Docker",
+    url: "https://www.docker.com",
+  },
+  {
+    icon: <JestIcon />,
+    technologyName: "Jest",
+    url: "https://jestjs.io",
   },
 ];

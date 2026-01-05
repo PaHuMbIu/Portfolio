@@ -4,3 +4,6 @@ export { SidebarNav } from "./sidebar/ui/Sidebar";
 export { LayoutStar } from "./layout-star/ui/LayoutStar";
 export { HomeHero } from "./home/ui/HomeHero";
 export { HomeTechnologies } from "./home/ui/HomeTechnologies";
+export { TechnologuCardSmall } from "./technology-card/ui/TechnologuCardSmall";
+export { TechnologySlider } from "./technology-slider/ui/TechnologySlider";
+export { TechnologyList } from "./technology-list/ui/TechnologyList";

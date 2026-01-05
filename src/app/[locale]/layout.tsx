@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "@/app/styles/globals.css";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/effect-creative";
 import { CSSProperties, ReactNode } from "react";
 import { SidebarNav, Header, LayoutStar } from "@/widgets";
 import { SidebarProvider } from "@/shared/ui/sidebar";

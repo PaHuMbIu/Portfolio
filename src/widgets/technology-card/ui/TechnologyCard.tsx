@@ -36,9 +36,9 @@ export const TechnologyCard = ({ icon, technologyName, description, url }: Techn
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-xl font-bold text-white hover:text-purple-300 transition-colors duration-200 text-center leading-tight"
+              className="text-xl font-bold text-white hover:text-purple-300 transition-colors duration-200 text-center leading-tight flex items-center justify-center gap-1"
             >
-              {technologyName}
+              {technologyName}{" "}
             </Link>
 
             <div className="w-12 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mb-2"></div>
