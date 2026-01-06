@@ -19,21 +19,21 @@ export const HomeAboutProject = () => {
         ease: "easeOut",
       }}
     >
-      <div className="relative w-full p-8 rounded-2xl bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
+      <div className="relative w-full md:p-8 p-4 rounded-2xl bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
         <div className="flex flex-col items-center">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="p-2 rounded-lg bg-linear-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30">
               <Sparkles className="w-5 h-5 text-blue-300" />
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
+            <h2 className="text-lg md:text-3xl font-bold text-white text-center">
               {t("aboutProjectTitle")}
             </h2>
           </div>
 
           <div className="w-32 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mb-4"></div>
 
-          <p className="text-base md:text-lg text-white/80 text-center max-w-3xl leading-relaxed">
+          <p className="text-sm md:text-lg text-white/80 text-center max-w-3xl leading-relaxed">
             {t("aboutProjectDescription")}
           </p>
         </div>

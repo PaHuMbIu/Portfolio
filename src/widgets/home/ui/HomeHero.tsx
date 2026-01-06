@@ -11,7 +11,7 @@ export const HomeHero = () => {
   return (
     <div className="flex flex-col items-center max-w-4xl w-full mb-12 mx-auto">
       <motion.h1
-        className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 pt-14"
+        className="text-white text-2xl md:text-5xl lg:text-6xl font-bold text-center md:mb-8 mb-4 md:pt-14 pt-2"
         variants={titleVariants}
         initial="hidden"
         animate="visible"
@@ -20,7 +20,7 @@ export const HomeHero = () => {
       </motion.h1>
 
       <motion.p
-        className="text-lg md:text-xl text-center text-white/80 max-w-2xl leading-relaxed mb-6"
+        className="text-sm md:text-xl text-center text-white/80 max-w-2xl leading-relaxed mb-6"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

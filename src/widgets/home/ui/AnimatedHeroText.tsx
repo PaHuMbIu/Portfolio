@@ -7,17 +7,33 @@ interface AnimatedHeroTextProps {
 }
 
 export const AnimatedHeroText = ({ text }: AnimatedHeroTextProps) => {
+  const words = text.split(" ");
+
   return (
     <>
-      {Array.from(text).map((char, index) => (
-        <motion.span
-          key={index}
-          variants={letterVariants}
-          className="inline-block"
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
+      {words.map((word, wordIndex) => (
+        <span key={wordIndex} className="inline-block whitespace-nowrap">
+          {Array.from(word).map((char, charIndex) => (
+            <motion.span
+              key={`${wordIndex}-${charIndex}`}
+              variants={letterVariants}
+              className="inline-block"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              {char}
+            </motion.span>
+          ))}
+
+          {wordIndex < words.length - 1 && (
+            <motion.span
+              variants={letterVariants}
+              className="inline-block"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              {"\u00A0"}
+            </motion.span>
+          )}
+        </span>
       ))}
     </>
   );

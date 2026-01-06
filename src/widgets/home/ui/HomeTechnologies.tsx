@@ -18,11 +18,11 @@ export const HomeTechnologies = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="inline-flex items-center gap-3 mb-4">
-          <div className="p-2 rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30">
+          <div className="p-2 md:block hidden rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30">
             <Code2 className="w-5 h-5 text-purple-300" />
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
+          <h2 className="text-lg md:text-3xl font-bold text-white text-center">
             {t("technologiesTitle")}
           </h2>
         </div>
