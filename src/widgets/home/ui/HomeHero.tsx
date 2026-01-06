@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { titleVariants, letterVariants } from "../animations/title.variants";
+import { titleVariants } from "../animations/title.variants";
+import { AnimatedHeroText } from "./AnimatedHeroText";
 
 export const HomeHero = () => {
   const t = useTranslations("home");
@@ -10,27 +11,16 @@ export const HomeHero = () => {
   return (
     <div className="flex flex-col items-center max-w-4xl w-full mb-12 mx-auto">
       <motion.h1
-        className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6"
+        className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 pt-14"
         variants={titleVariants}
         initial="hidden"
         animate="visible"
       >
-        {t("title")
-          .split("")
-          .map((char, index) => (
-            <motion.span
-              key={index}
-              variants={letterVariants}
-              className="inline-block"
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
+        <AnimatedHeroText text={t("title")} />
       </motion.h1>
 
       <motion.p
-        className="text-lg md:text-xl text-center text-white/80 max-w-2xl leading-relaxed"
+        className="text-lg md:text-xl text-center text-white/80 max-w-2xl leading-relaxed mb-6"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -41,6 +31,13 @@ export const HomeHero = () => {
       >
         {t("subtitle")}
       </motion.p>
+
+      <motion.div
+        className="w-32 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mt-4"
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      />
     </div>
   );
 };

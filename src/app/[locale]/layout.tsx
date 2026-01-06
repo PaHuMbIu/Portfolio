@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
   return (
     <html lang={locale} className={inter.variable}>
-      <body>
+      <body className="overflow-y-hidden">
         <NextIntlClientProvider messages={messages}>
           <Header />
 
@@ -51,10 +51,12 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
               } as CSSProperties
             }
           >
-            <div className="flex w-full">
+            <div className="flex w-full h-[calc(100vh-68px)] overflow-hidden">
               <SidebarNav />
 
-              <LayoutStar>{children}</LayoutStar>
+              <div className="flex-1 overflow-y-auto">
+                <LayoutStar>{children}</LayoutStar>
+              </div>
             </div>
           </SidebarProvider>
         </NextIntlClientProvider>

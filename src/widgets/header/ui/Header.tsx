@@ -54,38 +54,3 @@ export const Header = () => {
     </header>
   );
 };
-
-// "use client";
-
-// import { Button } from "@/shared/ui";
-// import { useLocale } from "next-intl";
-// import { usePathname, useRouter } from "next/navigation";
-
-// export const LanguageSwitcher = () => {
-//   const locale = useLocale();
-//   const router = useRouter();
-//   const pathname = usePathname();
-
-//   const detectedLanguage = locale === "ru" ? "Ru" : "En";
-
-//   // console.log(locale); // /ru/projects
-
-//   const handleToggleLang = () => {
-//     const nextLocale = locale === "ru" ? "en" : "ru";
-
-//     console.log("Next Locale: ", nextLocale); // en всегда
-//     console.log("Before: ", { pathname, locale: nextLocale });
-//     router.replace(pathname, { locale: nextLocale });
-//     console.log("After: ", { pathname, locale: nextLocale });
-//   };
-
-//   return (
-//     <Button
-//       onClick={handleToggleLang}
-//       hover="purpleHover"
-//       className=" p-2.5! max-w-9 max-h-9 text-white/90 flex items-center justify-center"
-//     >
-//       {detectedLanguage}
-//     </Button>
-//   );
-// };

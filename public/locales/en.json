@@ -27,6 +27,35 @@
     "title": "Hello, my name is Pavel. I'm a frontend developer",
     "subtitle": "I create modern, responsive web applications with attention to detail and user experience",
     "technologiesTitle": "Technologies I use:",
-    "technologiesDescription": "Click on any card to learn more"
+    "technologiesDescription": "Click on any card to learn more",
+    "aboutProjectTitle": "About the project",
+    "aboutProjectDescription": "My portfolio is an interactive space where various tools, features and animations are collected. Here you can get acquainted with my roadmap in programming, the technologies I master, as well as see experiments with tools, algorithms and animations created by me. There are both fun and completely useless features - just for fun :D",
+    "stats": {
+      "projects": {
+        "label": "Projects"
+      },
+      "technologies": {
+        "label": "Technologies"
+      },
+      "experience": {
+        "label": "Years of experience"
+      },
+      "projectsCompleted": {
+        "label": "Tasks completed"
+      }
+    },
+    "cta": {
+      "title": "What's next?",
+      "description": "Explore my projects, get in touch, or check out the code on GitHub",
+      "projects": {
+        "label": "My Projects"
+      },
+      "contact": {
+        "label": "Contact"
+      },
+      "github": {
+        "label": "GitHub"
+      }
+    }
   }
 }
