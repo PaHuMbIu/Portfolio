@@ -1,4 +1,4 @@
-import { itemVariants, listVariants } from "@/widgets/home/animations/technologyList.variants";
+import { fadeUpItem, staggerContainer } from "@/shared/animations";
 import { TECHNOLOGIES_DATA } from "@/widgets/technology-card/model/technologies";
 import { TechnologyCard } from "@/widgets/technology-card/ui/TechnologyCard";
 import { motion } from "framer-motion";
@@ -13,10 +13,10 @@ export const TechnologyList = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      variants={listVariants}
+      variants={staggerContainer}
     >
       {TECHNOLOGIES_DATA.map((technology, index) => (
-        <motion.li key={index} variants={itemVariants}>
+        <motion.li key={index} variants={fadeUpItem}>
           <TechnologyCard
             description={tTechnologyCard(technology.descriptionKey)}
             {...technology}

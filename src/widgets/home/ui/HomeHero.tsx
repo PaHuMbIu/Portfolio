@@ -2,8 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { titleVariants } from "../animations/title.variants";
 import { AnimatedHeroText } from "./AnimatedHeroText";
+import { staggerFade } from "@/shared/animations";
 
 export const HomeHero = () => {
   const t = useTranslations("home");
@@ -12,7 +12,7 @@ export const HomeHero = () => {
     <div className="flex flex-col items-center max-w-4xl w-full mb-12 mx-auto">
       <motion.h1
         className="text-white text-2xl md:text-5xl lg:text-6xl font-bold text-center md:mb-8 mb-4 md:pt-14 pt-2"
-        variants={titleVariants}
+        variants={staggerFade}
         initial="hidden"
         animate="visible"
       >

@@ -1,4 +1,4 @@
-import { letterVariants } from "../animations/title.variants";
+import { fadeUpLetter } from "@/shared/animations";
 
 import { motion } from "framer-motion";
 
@@ -16,7 +16,7 @@ export const AnimatedHeroText = ({ text }: AnimatedHeroTextProps) => {
           {Array.from(word).map((char, charIndex) => (
             <motion.span
               key={`${wordIndex}-${charIndex}`}
-              variants={letterVariants}
+              variants={fadeUpLetter}
               className="inline-block"
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
@@ -26,7 +26,7 @@ export const AnimatedHeroText = ({ text }: AnimatedHeroTextProps) => {
 
           {wordIndex < words.length - 1 && (
             <motion.span
-              variants={letterVariants}
+              variants={fadeUpLetter}
               className="inline-block"
               transition={{ duration: 0.3, ease: "easeOut" }}
             >

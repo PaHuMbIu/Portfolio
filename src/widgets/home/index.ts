@@ -3,8 +3,6 @@ export { HomeTechnologies } from "./ui/HomeTechnologies";
 export { HomeAboutProject } from "./ui/HomeAboutProject";
 export { HomeStats } from "./ui/HomeStats";
 export { HomeCTA } from "./ui/HomeCTA";
-export { listVariants, itemVariants } from "./animations/technologyList.variants";
-export { titleVariants, letterVariants } from "./animations/title.variants";
 export { CTA_BUTTONS_DATA, type ICTAButtonData } from "./model/ctaData";
 export { CTAButton } from "./ui/CTAButton";
 export { STATS_DATA, type IStatsData } from "./model/statsData";
