@@ -37,7 +37,7 @@ export const CTAButton = ({
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: index * 0.1 }}
+        transition={{ duration: 0, delay: index * 0.1 }}
       >
         <div className="relative z-10 flex items-center gap-3 text-white font-semibold">
           <Icon className="w-5 h-5" />

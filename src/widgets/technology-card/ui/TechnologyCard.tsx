@@ -36,15 +36,15 @@ export const TechnologyCard = ({ icon, technologyName, description, url }: Techn
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-xl font-bold text-white hover:text-purple-300 transition-colors duration-200 text-center leading-tight flex items-center justify-center gap-1"
+              className="text-xl font-bold text-white hover:text-purple-300 transition-colors duration-300 text-center leading-tight flex items-center justify-center gap-1 group/link"
             >
               {technologyName}{" "}
             </Link>
 
-            <div className="w-12 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mb-2"></div>
+            <div className="w-16 h-px bg-linear-to-r from-transparent via-purple-400/60 to-transparent mb-3 mt-1"></div>
 
             <div className="flex w-full h-full">
-              <p className="text-white/90 text-center leading-relaxed text-balance max-w-full">
+              <p className="text-white/85 text-sm text-center leading-relaxed text-balance max-w-full px-1">
                 {description}
               </p>
             </div>

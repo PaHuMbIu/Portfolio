@@ -27,7 +27,7 @@ export const TechnologySlider = () => {
         loop={true}
         spaceBetween={20}
         autoplay={{
-          delay: 2000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
@@ -35,6 +35,8 @@ export const TechnologySlider = () => {
           clickable: true,
         }}
         slidesPerView="auto"
+        speed={800}
+        grabCursor={true}
       >
         {TECHNOLOGIES_DATA.map((technology, index) => (
           <SwiperSlide key={index} className="max-w-[200px]!">
