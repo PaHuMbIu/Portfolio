@@ -1,0 +1,7 @@
+export { default as LoftHausImage } from "./LoftHaus_preview.jpg";
+export { default as CalculatorImage } from "./Calculator_preview.jpg";
+export { default as IRobotImage } from "./IRobot_preview.jpg";
+export { default as TimeCraftReactImage } from "./TimeCraft_React_preview.jpg";
+export { default as TimeCraftImage } from "./TimeCraft_preview.jpg";
+export { default as VirusTotalImage } from "./VirusTotal_preview.jpg";
+export { default as FilmHubImage } from "./FilmHub_preview.jpg";

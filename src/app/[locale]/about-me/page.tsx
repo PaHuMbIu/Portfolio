@@ -1,5 +1,11 @@
 "use client";
 
+import { Timeline } from "@/widgets";
+
 export default function AboutMe() {
-  return <h1 className="text-white">About Me</h1>;
+  return (
+    <section className="w-full mx-auto max-w-[1200px] min-h-screen py-12">
+      <Timeline />
+    </section>
+  );
 }
