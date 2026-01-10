@@ -191,7 +191,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   {
     id: "9",
     date: "27 Июня 2025",
-    title: "Первые коммерческие проекты: Telegram боты",
+    title: "Первые коммерческие проекты: Telegram mini app",
     description: [
       "На мою удачу, буквально сразу после заморозки FilmHub, меня пригласи на разработку двух Telegram приложений: Tonex farm и Casper garant bot.",
       "Это было моё первое участие в разработке внешних приложений под заказ.",

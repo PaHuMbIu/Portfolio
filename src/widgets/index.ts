@@ -14,4 +14,3 @@ export { TechnologyList } from "./technology-list/ui/TechnologyList";
 export { StatsCard } from "./home/ui/StatsCard";
 export { AnimatedHeroText } from "./home/ui/AnimatedHeroText";
 export { Timeline } from "./timeline";
-export { RoadLine } from "./timeline/ui/RoadLine";
