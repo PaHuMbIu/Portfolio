@@ -7,6 +7,8 @@ import {
   VirusTotalImage,
   FilmHubImage,
   LoftHausImage,
+  CasperGarant,
+  Tonex,
 } from "@/shared/images/projects";
 
 export interface ICodeLink {
@@ -60,7 +62,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       "Однако период интенсивного роста оказался недолгим - меня призвали на другой «фронтенд». Армейский.",
     ],
     stack: ["HTML", "CSS", "JavaScript"],
-    codeLinks: [{ name: "LoftHouse", url: "https://pahumbiu.github.io/Layout_LoftHouse/" }],
+    codeLinks: [{ name: "LoftHouse", url: "https://github.com/PaHuMbIu/Layout_LoftHouse" }],
     projectLinks: [{ name: "LoftHouse", url: "https://pahumbiu.github.io/Layout_LoftHouse/" }],
     imageUrls: [
       {
@@ -85,8 +87,8 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       { name: "Calculator", image: CalculatorImage, url: "https://pahumbiu.github.io/Calculator/" },
     ],
     stack: ["HTML", "CSS", "JavaScript"],
-    codeLinks: [{ name: "Calculator", url: "https://pahumbiu.github.io/Calculator/" }],
-    projectLinks: [{ name: "Calculator", url: "https://github.com/PaHuMbIu/Calculator" }],
+    codeLinks: [{ name: "Calculator", url: "https://github.com/PaHuMbIu/Calculator" }],
+    projectLinks: [{ name: "Calculator", url: "https://pahumbiu.github.io/Calculator/" }],
   },
   {
     id: "4",
@@ -117,7 +119,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       "К слову, фронт здесь написан на ванильном JS",
     ],
     imageUrls: [
-      { name: "TimeCraft", image: TimeCraftImage, url: "https://pahumbiu.github.io/TimeCraft/" },
+      { name: "TimeCraft", image: TimeCraftImage, url: "http://timecraft.delfinnnn.online" },
     ],
     stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
     codeLinks: [
@@ -135,14 +137,14 @@ export const TIMELINE_DATA: ITimelineItem[] = [
     ],
     imageUrls: [
       {
-        name: "TimeCraftReact",
+        name: "TimeCraft React",
         image: TimeCraftReactImage,
-        url: "https://pahumbiu.github.io/TimeCraft_React/",
+        url: "http://timecraft-react.delfinnnn.online/",
       },
     ],
     stack: ["React", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
-    codeLinks: [{ name: "TimeCraftReact", url: "https://github.com/PaHuMbIu/TimeCraft_React" }],
-    projectLinks: [{ name: "TimeCraftReact", url: "http://timecraft-react.delfinnnn.online/" }],
+    codeLinks: [{ name: "TimeCraft React", url: "https://github.com/PaHuMbIu/TimeCraft_React" }],
+    projectLinks: [{ name: "TimeCraft React", url: "http://timecraft-react.delfinnnn.online/" }],
   },
   {
     id: "7",
@@ -182,11 +184,9 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       "PostgreSQL",
       "Docker",
     ],
-    imageUrls: [
-      { name: "FilmHub", image: FilmHubImage, url: "https://pahumbiu.github.io/FilmHub/" },
-    ],
+    imageUrls: [{ name: "FilmHub", image: FilmHubImage, url: "Frozen" }],
     codeLinks: [{ name: "FilmHub", url: "NDA" }],
-    projectLinks: [{ name: "FilmHub", url: "Заморожен" }],
+    projectLinks: [{ name: "FilmHub", url: "NDA" }],
   },
   {
     id: "9",
@@ -198,12 +198,16 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       "Особого напряжения я не ощущал. Параллельно даже, готовился к поиску постоянной работы...",
     ],
     codeLinks: [
-      { name: "TRONEX-TWA", url: "NDA" },
+      { name: "CasperGarant", url: "NDA" },
       { name: "TRONEX-TWA", url: "https://github.com/VladimirBerl/TRONEX-TWA" },
+    ],
+    imageUrls: [
+      { name: "CasperGarant", image: CasperGarant, url: "https://t.me/CasperGarantBot" },
+      { name: "Tonex", image: Tonex, url: "https://t.me/tonexfarm_bot" },
     ],
     projectLinks: [
       { name: "CasperGarantBot", url: "https://t.me/CasperGarantBot" },
-      { name: "tonexfarm_bot", url: "https://t.me/tonexfarm_bot" },
+      { name: "Tonex", url: "https://t.me/tonexfarm_bot" },
     ],
   },
   {

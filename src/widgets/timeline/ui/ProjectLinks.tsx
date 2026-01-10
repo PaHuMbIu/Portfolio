@@ -12,12 +12,12 @@ interface ProjectLinksProps {
 
 export const ProjectLinks = ({ link }: ProjectLinksProps) => {
   const { name, url } = link;
-  const isDisabled = url === "Заморожен" || url === "NDA";
+  const isDisabled = url === "NDA";
 
   return (
     <motion.div
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={!isDisabled ? { scale: 1.05, y: -2 } : undefined}
+      whileTap={!isDisabled ? { scale: 0.98 } : undefined}
       transition={{ duration: 0.2 }}
     >
       <Link
@@ -26,7 +26,8 @@ export const ProjectLinks = ({ link }: ProjectLinksProps) => {
         className={cn(
           "group relative overflow-hidden inline-flex items-center gap-2.5 px-5 py-3 text-sm font-medium rounded-xl transition-all duration-300 backdrop-blur-sm border",
           {
-            "text-gray-500 cursor-not-allowed border-gray-700/50 bg-gray-800/20": isDisabled,
+            "text-gray-500 cursor-not-allowed pointer-events-none border-gray-700/50 bg-gray-800/20":
+              isDisabled,
           },
 
           {

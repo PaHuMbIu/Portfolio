@@ -57,5 +57,11 @@
         "label": "GitHub"
       }
     }
+  },
+  "timeline": {
+    "projectGallery": {
+      "openProject": "Открыть проект",
+      "frozen": "Заморожен"
+    }
   }
 }

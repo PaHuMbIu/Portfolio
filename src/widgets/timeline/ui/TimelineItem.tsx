@@ -55,10 +55,10 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
 
         {imageUrls && imageUrls.length > 0 && (
           <motion.div
-            className="mt-6 grid grid-cols-1 gap-4"
+            className="mt-6 flex gap-4 w-full justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {imageUrls.map((image, index) => (

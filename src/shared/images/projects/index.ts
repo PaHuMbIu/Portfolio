@@ -5,3 +5,5 @@ export { default as TimeCraftReactImage } from "./TimeCraft_React_preview.jpg";
 export { default as TimeCraftImage } from "./TimeCraft_preview.jpg";
 export { default as VirusTotalImage } from "./VirusTotal_preview.jpg";
 export { default as FilmHubImage } from "./FilmHub_preview.jpg";
+export { default as CasperGarant } from "./CasperGarant_preview.jpg";
+export { default as Tonex } from "./Tonex_preview.jpg";

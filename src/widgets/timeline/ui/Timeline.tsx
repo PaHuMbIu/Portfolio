@@ -7,7 +7,7 @@ import { TIMELINE_DATA } from "../model/timelineData";
 export const Timeline = () => {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-12">
-      <motion.h2
+      <motion.h1
         className="text-3xl md:text-4xl font-bold text-white mb-12 text-center"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ export const Timeline = () => {
         transition={{ duration: 0.6 }}
       >
         Мой путь
-      </motion.h2>
+      </motion.h1>
 
       <div className="relative">
         {TIMELINE_DATA.map((item) => (
