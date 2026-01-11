@@ -1,7 +1,11 @@
 "use client";
 
-import { Timeline } from "@/widgets";
+import { LayoutStar, Timeline } from "@/widgets";
 
 export default function AboutMe() {
-  return <Timeline />;
+  return (
+    <LayoutStar>
+      <Timeline />
+    </LayoutStar>
+  );
 }

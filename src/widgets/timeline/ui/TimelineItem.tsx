@@ -37,7 +37,7 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
 
         {(codeLinks || projectLinks) && (
           <motion.div
-            className="mt-6 flex flex-wrap gap-4"
+            className="pt-2 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0 }}

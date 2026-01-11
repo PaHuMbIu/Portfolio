@@ -59,6 +59,7 @@
     }
   },
   "timeline": {
+    "title": "Мой путь",
     "projectGallery": {
       "openProject": "Открыть проект",
       "frozen": "Заморожен"

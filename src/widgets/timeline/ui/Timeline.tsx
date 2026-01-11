@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { TimelineItem } from "./TimelineItem";
 import { TIMELINE_DATA } from "../model/timelineData";
+import { useTranslations } from "next-intl";
 
 export const Timeline = () => {
+  const t = useTranslations("timeline");
+
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-12">
       <motion.h1
@@ -14,7 +17,7 @@ export const Timeline = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        Мой путь
+        {t("title")}
       </motion.h1>
 
       <div className="relative">

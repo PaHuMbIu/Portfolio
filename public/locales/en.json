@@ -59,6 +59,7 @@
     }
   },
   "timeline": {
+    "title": "My way",
     "projectGallery": {
       "openProject": "Open project",
       "frozen": "Frozen"
