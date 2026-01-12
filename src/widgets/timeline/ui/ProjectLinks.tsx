@@ -24,7 +24,7 @@ export const ProjectLinks = ({ link }: ProjectLinksProps) => {
       <Button
         asChild
         variant={isDisabled ? "glowBlueDisabled" : "glowBlue"}
-        className="text-sm font-semibold"
+        className="text-xs sm:text-sm font-semibold"
       >
         <Link href={url} target="_blank">
           {!isDisabled && (
@@ -36,14 +36,14 @@ export const ProjectLinks = ({ link }: ProjectLinksProps) => {
             />
           )}
 
-          <div className="relative z-10 flex items-center gap-2.5">
+          <div className="relative z-10 flex items-center gap-2 sm:gap-2.5">
             <motion.div
               whileHover={!isDisabled ? { rotate: [0, -10, 10, -10, 0] } : undefined}
               transition={{ duration: 0.5 }}
             >
               <ExternalLink
                 className={cn(
-                  "w-4 h-4 transition-all duration-300",
+                  "w-3.5 h-3.5 sm:w-4 sm:h-4 transition-all duration-300",
                   !isDisabled && "group-hover:scale-110 group-hover:text-cyan-300",
                 )}
               />

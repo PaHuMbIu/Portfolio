@@ -26,7 +26,7 @@ export const LanguageSwitcher = () => {
     <Button
       onClick={handleToggleLang}
       hover="purpleHover"
-      className="p-2.5! max-w-9 max-h-9 text-white/90 flex items-center justify-center"
+      className="p-2.5! h-[38px] w-[38px] text-white flex items-center justify-center"
     >
       {detectedLanguage}
     </Button>

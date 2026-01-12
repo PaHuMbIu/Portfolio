@@ -1,6 +1,6 @@
 import { House, Gamepad2, BookImage, Wrench, User } from "lucide-react";
 
-export const SIDEBAR_ITEMS = [
+export const NAV_ITEMS = [
   {
     icon: House,
     label: "Home page",

@@ -14,7 +14,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
 } from "@/shared/ui/sidebar";
-import { SIDEBAR_ITEMS } from "../model/sidebarItems";
+import { NAV_ITEMS } from "../model/sidebarItems";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -42,7 +42,7 @@ export const SidebarNav = () => {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {SIDEBAR_ITEMS.map((item) => {
+              {NAV_ITEMS.map((item) => {
                 const hrefWithLocale = `/${locale}${item.href}`;
 
                 return (
