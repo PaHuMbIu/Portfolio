@@ -63,6 +63,110 @@
     "projectGallery": {
       "openProject": "Open project",
       "frozen": "Frozen"
+    },
+    "timelineData": {
+      "1": {
+        "date": "October 10, 2022",
+        "title": "Start",
+        "description": [
+          "The starting point. The day when I entered the world of programming.",
+          "The future seemed dark and uncertain then,",
+          "and my padding-left: 900px; already seemed to me a sign of real \"professionalism\"."
+        ]
+      },
+      "2": {
+        "date": "October 6, 2023 - November 11, 2023",
+        "title": "First fully implemented landing",
+        "description": [
+          "After not the most active period in development, I still managed to take on the first serious project.",
+          "The mentoring of the Team Lead played a big role: he helped build the right learning vector and outlined a clear roadmap.",
+          "This stage became a noticeable breakthrough in my development as a developer.",
+          "However, the period of intensive growth turned out to be short - I was called to another \"frontend\". The military one."
+        ]
+      },
+      "3": {
+        "date": "November 14, 2024",
+        "title": "Return and new start",
+        "description": [
+          "After completing tasks on the military \"frontend\". Returning, I focused on improving my developer skills. The motivation was extremely clear - to find my first job in IT.",
+          "Refreshing my knowledge a bit, having laid out a random page from the internet and closing the stage with layout, I moved on to the JavaScript base.",
+          "And, like in that meme about beginners sweeping products off the shelves, where instead of products - calculators, I also started with it.",
+          "Yes, a calculator. Probably, this is the base..."
+        ]
+      },
+      "4": {
+        "date": "January 26, 2025",
+        "title": "Start of mastering React",
+        "description": [
+          "After learning how much easier it is to assemble counters compared to native JavaScript, I was genuinely surprised.",
+          "Of course, I started using React not quite for its intended purpose.",
+          "I - like using a bazooka against sparrows, started making NOT a powerful online store, NOT creating complex interfaces, as befits React, but... Just laying out a page...",
+          "However, the main goal was to understand the React ecosystem and its capabilities at a basic level."
+        ]
+      },
+      "5": {
+        "date": "February 14, 2025",
+        "title": "TODO-LIST: first Fullstack project",
+        "description": [
+          "After touching React. I resolutely set myself up for a Fullstack project.",
+          "This is an MPA. There is a database and authorization (though from 1979). The project was aimed at training REST API + CRUD.",
+          "Can you guess what it is? This phrase is associated by beginners with only one thing - TODO-LIST!"
+        ]
+      },
+      "6": {
+        "date": "March 1, 2025",
+        "title": "TODO-LIST on React",
+        "description": [
+          "To evaluate the difference in convenience and development speed compared to vanilla JS, I decided to make a brother of the older one...",
+          "TODO-LIST on React! And it turned out really fast! But not because React is cool, but because I already had the backend code and database."
+        ]
+      },
+      "7": {
+        "date": "March 20, 2025",
+        "title": "iRobot landing: SCSS and custom sliders",
+        "description": [
+          "No! This is not a TODO List on TypeScript, as you might think... Here, I decided to work with the SCSS preprocessor and dive back into vanilla JS.",
+          "This time, a landing page. Which I considered insufficient in my GitHub profile.",
+          "This landing is complicated by custom, reusable sliders, without any libraries."
+        ]
+      },
+      "8": {
+        "date": "May 17, 2025",
+        "title": "Team project: explosive growth",
+        "description": [
+          "The day when explosive growth happened in geometric progression. But not everything at once. At first, it was another pet-project.",
+          "Approximately at the end of May, I got the idea to assemble a team of developers and a designer for its development. All this was aimed at simulating team experience, which is important in IT.",
+          "Spending a huge amount of time at that moment, not very good project documentation and various links for invitations, I started sending everything to all popular forums, YouTube videos and telegram chats.",
+          "Having gathered the necessary number of guys and starting development, things, let's say, didn't go quite smoothly. Our noob experience didn't give significant progress, and the future of the project was becoming more and more uncertain... The idea was fading, the desire too.",
+          "Suddenly, two people got in touch, their difference was that they were not beginners. These were two confident fullstack-middle developers. Despite their work - they came for the idea.",
+          "And here, perhaps, this is the moment I mentioned at the beginning: significant growth in architecture, new knowledge and a broader view of the entire development infrastructure.",
+          "Throughout development, developers of various specialties came to us - from database balancers to Tech Leads. A significant part of the time was spent on normalizing processes, so we didn't succeed in development, and the project had to be frozen due to the need to find a job."
+        ]
+      },
+      "9": {
+        "date": "June 27, 2025",
+        "title": "First commercial projects: Telegram mini apps",
+        "description": [
+          "To my luck, literally right after freezing FilmHub, I was invited to develop two Telegram applications: Tonex farm and Casper garant.",
+          "This was my first participation in the development of external applications on order.",
+          "I didn't feel any particular tension. Even in parallel, I was preparing to search for a permanent job..."
+        ]
+      },
+      "10": {
+        "date": "July 16, 2025",
+        "title": "Searching for a job and first working day in Plan9.tech",
+        "description": [
+          "Having prepared my resume, I took on the most difficult task - searching for a job.",
+          "Comments under every new video \"How to write a resume\" or \"How to find a job?\" made me associate the search with something impossible...",
+          "Negativity towards the market was everywhere, in chats, on forums, under every video in the comments. In general, this is justified...",
+          "But I still managed to find a job not in hardcore 7 months, not in a year and not in 1.5, but, relatively quickly - in 3 months including preparation.",
+          "During this time, I came across both scammers who offered \"pay 200,000 and become a middle\", and strange companies where they demanded money from you to get a job.",
+          "But the goal remained real.",
+          "On September 29, 2025, I went to my first, real, working day in a real IT company - Plan9.tech.",
+          "So, from \"padding-left: 900px;\" to: \"how to center a div?\""
+        ]
+      }
     }
+
   }
 }

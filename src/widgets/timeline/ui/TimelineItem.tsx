@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { ITimelineItem } from "../model/timelineData";
 import { RoadLine, TechStack, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline";
 
@@ -9,7 +10,12 @@ interface TimelineItemProps {
 }
 
 export const TimelineItem = ({ item }: TimelineItemProps) => {
-  const { title, date, description, stack, codeLinks, projectLinks, imageUrls } = item;
+  const t = useTranslations("timeline");
+  const { id, stack, codeLinks, projectLinks, imageUrls } = item;
+
+  const date = t.raw(`timelineData.${id}.date`) as string[];
+  const title = t(`timelineData.${id}.title`);
+  const description = t.raw(`timelineData.${id}.description`) as string[];
 
   return (
     <div className="relative flex">
