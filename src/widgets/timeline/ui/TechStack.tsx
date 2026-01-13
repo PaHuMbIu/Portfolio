@@ -6,7 +6,7 @@ interface TechStackProps {
 
 export const TechStack = ({ stack }: TechStackProps) => {
   return (
-    <motion.div
+    <motion.li
       className="mt-4 flex flex-wrap gap-2"
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -16,11 +16,11 @@ export const TechStack = ({ stack }: TechStackProps) => {
       {stack.map((tech, index) => (
         <span
           key={index}
-          className="px-3 py-1 text-xs md:text-sm font-medium text-purple-300 bg-purple-500/10 border border-purple-500/30 rounded-full hover:bg-purple-500/20 hover:border-purple-500/50 transition-all duration-200"
+          className="px-3 py-1 text-xs md:text-sm font-medium text-purple-100 bg-black/40 backdrop-blur-md border border-purple-400/30 rounded-full shadow-md shadow-black/30 hover:bg-black/50 hover:border-purple-400/50 hover:shadow-lg hover:shadow-black/40 transition-all duration-200"
         >
           {tech}
         </span>
       ))}
-    </motion.div>
+    </motion.li>
   );
 };

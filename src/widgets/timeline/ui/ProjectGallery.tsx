@@ -7,12 +7,21 @@ import Link from "next/link";
 import { ExternalLink, Snowflake } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import {
+  cardOverlay,
+  cardGradientOverlay,
+  cardShimmerOverlay,
+  cardShimmerEffect,
+  cardHoverOverlay,
+} from "@/shared/ui/tv/card";
+import { TechStack } from "./TechStack";
 
 interface ProjectGalleryProps {
   image: IImageUrl;
+  stack: string[];
 }
 
-export const ProjectGallery = ({ image }: ProjectGalleryProps) => {
+export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
   const t = useTranslations("timeline.projectGallery");
 
   const { name, image: imageUrl, url } = image;
@@ -24,13 +33,17 @@ export const ProjectGallery = ({ image }: ProjectGalleryProps) => {
   return (
     <motion.div
       key={name}
-      className="group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-linear-to-br from-purple-500/10 via-pink-500/5 to-transparent backdrop-blur-sm shadow-lg shadow-purple-500/10"
+      className="group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-linear-to-r from-purple-500/10 via-pink-500/5 to-transparent backdrop-blur-sm shadow-lg shadow-purple-500/10"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-purple-500/0 via-pink-500/0 to-blue-500/0 group-hover:from-purple-500/20 group-hover:via-pink-500/10 group-hover:to-blue-500/10 transition-all duration-500 blur-xl -z-10" />
+      <ul className="absolute z-10 top-0 left-4 group-hover:opacity-0 transition-opacity duration-300">
+        <TechStack stack={stack} />
+      </ul>
+
+      <div className={cardOverlay({ frozen: isFrozen })} />
 
       <div className="relative overflow-hidden rounded-2xl h-full">
         <Image
@@ -41,15 +54,10 @@ export const ProjectGallery = ({ image }: ProjectGalleryProps) => {
           className="w-full max-h-[400px] object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
         />
 
-        <div
-          className={cn(
-            "absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-            isFrozen ? "from-slate-900/90 via-slate-800/60 to-transparent" : "",
-          )}
-        />
+        <div className={cardGradientOverlay({ frozen: isFrozen })} />
 
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+        <div className={cardShimmerOverlay()}>
+          <div className={cardShimmerEffect()} />
         </div>
 
         <Link
@@ -68,24 +76,23 @@ export const ProjectGallery = ({ image }: ProjectGalleryProps) => {
             <div className="flex items-center gap-3 text-white">
               <motion.div
                 className={cn(
-                  "p-2 rounded-lg backdrop-blur-md border transition-all duration-300",
+                  "p-2 rounded-lg border transition-all duration-300",
                   isFrozen ?
                     "bg-slate-800/60 border-slate-600/40"
                   : "bg-purple-500/20 border-purple-400/40 group-hover:bg-purple-500/30 group-hover:border-purple-400/60",
                 )}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 {isFrozen ?
                   <Snowflake className="w-5 h-5 text-slate-300" />
                 : <ExternalLink className="w-5 h-5 text-purple-200" />}
               </motion.div>
+
               <span className="font-semibold text-lg tracking-wide">{statusProject}</span>
             </div>
           </motion.div>
         </Link>
 
-        <div className="absolute inset-0 bg-purple-500/0 group-hover:bg-purple-500/15 transition-colors duration-500 pointer-events-none rounded-2xl" />
+        <div className={cardHoverOverlay()} />
       </div>
 
       <motion.div

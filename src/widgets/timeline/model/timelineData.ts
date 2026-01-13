@@ -113,7 +113,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       "shadcn/ui",
       "Django",
       "PostgreSQL",
-      "Docker",
+      "RTK query",
     ],
     imageUrls: [{ name: "FilmHub", image: FilmHubImage, url: "Frozen" }],
     codeLinks: [{ name: "FilmHub", url: "NDA" }],
@@ -121,7 +121,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "9",
-    stack: ["React", "TailwindCSS", "TypeScript", "shadcn/ui", "PostgreSQL", "Docker"],
+    stack: ["React", "TailwindCSS", "TypeScript", "RTK query"],
     codeLinks: [
       { name: "CasperGarant", url: "NDA" },
       { name: "TRONEX-TWA", url: "https://github.com/VladimirBerl/TRONEX-TWA" },

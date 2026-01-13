@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ITimelineItem } from "../model/timelineData";
-import { RoadLine, TechStack, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline";
+import { RoadLine, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline";
 
 interface TimelineItemProps {
   item: ITimelineItem;
@@ -53,6 +53,7 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
             >
               {description.map((paragraph, index) => (
                 <motion.p
+                  className="text-white/85 leading-[1.8] tracking-wide"
                   key={index}
                   variants={{
                     hidden: { opacity: 0, y: 10 },
@@ -65,8 +66,6 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
             </motion.div>
           </div>
         </article>
-
-        {stack && stack.length > 0 && <TechStack stack={stack} />}
 
         {(codeLinks || projectLinks) && (
           <motion.div
@@ -88,14 +87,14 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
 
         {imageUrls && imageUrls.length > 0 && (
           <motion.div
-            className="mt-6 flex gap-4 w-full justify-center"
+            className="mt-6 flex flex-wrap gap-4 w-full justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {imageUrls.map((image, index) => (
-              <ProjectGallery key={index} image={image} />
+              <ProjectGallery key={index} image={image} stack={stack || []} />
             ))}
           </motion.div>
         )}
