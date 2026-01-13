@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface TechStackProps {
   stack: string[];
@@ -7,7 +8,7 @@ interface TechStackProps {
 export const TechStack = ({ stack }: TechStackProps) => {
   return (
     <motion.li
-      className="mt-4 flex flex-wrap gap-2"
+      className={cn("flex flex-wrap", "mt-2 sm:mt-4", "gap-1.5 sm:gap-2")}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0 }}
@@ -16,7 +17,10 @@ export const TechStack = ({ stack }: TechStackProps) => {
       {stack.map((tech, index) => (
         <span
           key={index}
-          className="px-3 py-1 text-xs md:text-sm font-medium text-purple-100 bg-black/40 backdrop-blur-md border border-purple-400/30 rounded-full shadow-md shadow-black/30 hover:bg-black/50 hover:border-purple-400/50 hover:shadow-lg hover:shadow-black/40 transition-all duration-200"
+          className={cn(
+            "font-medium text-purple-100 bg-black/40 backdrop-blur-md border border-purple-400/30 rounded-full shadow-md shadow-black/30 hover:bg-black/50 hover:border-purple-400/50 hover:shadow-lg hover:shadow-black/40 transition-all duration-200",
+            "px-2 py-0.5 text-[10px] sm:px-3 sm:py-1 sm:text-xs md:text-sm",
+          )}
         >
           {tech}
         </span>

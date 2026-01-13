@@ -4,14 +4,18 @@ import { motion } from "framer-motion";
 import { TimelineItem } from "./TimelineItem";
 import { TIMELINE_DATA } from "../model/timelineData";
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 export const Timeline = () => {
   const t = useTranslations("timeline");
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-12">
+    <div className={cn("w-full max-w-4xl mx-auto", "px-2 py-6 sm:px-4 sm:py-12")}>
       <motion.h1
-        className="text-3xl md:text-4xl font-bold text-white mb-12 text-center"
+        className={cn(
+          "font-bold text-white text-center",
+          "text-2xl mb-6 sm:text-3xl sm:mb-12 md:text-4xl",
+        )}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

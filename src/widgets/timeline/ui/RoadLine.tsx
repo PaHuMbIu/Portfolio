@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const RoadLine = () => {
   return (
-    <div className="relative flex flex-col items-center min-w-[60px]">
+    <div className={cn("relative flex flex-col items-center", "min-w-[40px] sm:min-w-[60px]")}>
       <motion.div
         className="relative z-10 flex items-center justify-center"
         initial={{ scale: 0 }}
@@ -24,7 +25,12 @@ export const RoadLine = () => {
           }}
         />
 
-        <div className="relative w-6 h-6 rounded-full bg-linear-to-br from-purple-500 via-purple-600 to-pink-500 border-4 border-white shadow-xl shadow-purple-500/60 ring-4 ring-purple-500/20">
+        <div
+          className={cn(
+            "relative rounded-full bg-linear-to-br from-purple-500 via-purple-600 to-pink-500 border-white shadow-xl shadow-purple-500/60 ring-purple-500/20",
+            "w-4 h-4 border-2 ring-2 sm:w-6 sm:h-6 sm:border-4 sm:ring-4",
+          )}
+        >
           <Circle
             className="absolute inset-0 w-full h-full text-purple-400/50"
             fill="currentColor"

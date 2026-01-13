@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ITimelineItem } from "../model/timelineData";
 import { RoadLine, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline";
+import { cn } from "@/lib/utils";
 
 interface TimelineItemProps {
   item: ITimelineItem;
@@ -22,23 +23,37 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
       <RoadLine />
 
       <motion.div
-        className="flex-1 pb-8"
+        className="flex-1 pb-4 sm:pb-8"
         initial={{ opacity: 0, y: 20, x: -20 }}
         whileInView={{ opacity: 1, y: 0, x: 0 }}
         viewport={{ once: true, amount: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <article className="relative p-4 md:p-5 rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 backdrop-blur-sm border border-white/10 shadow-lg shadow-purple-500/5">
+        <article
+          className={cn(
+            "relative rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 backdrop-blur-sm border border-white/10 shadow-lg shadow-purple-500/5",
+            "p-3 sm:p-4 md:p-5",
+          )}
+        >
           <div className="absolute inset-0 rounded-xl bg-linear-to-tr from-purple-600/10 via-transparent to-transparent pointer-events-none" />
 
           <div className="relative z-10">
             <div className="mb-2">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{title}</h3>
-              <time className="text-sm md:text-base text-purple-400 font-medium">{date}</time>
+              <h3 className={cn("font-bold text-white mb-1", "text-lg sm:text-xl md:text-2xl")}>
+                {title}
+              </h3>
+              <time
+                className={cn("text-purple-400 font-medium", "text-xs sm:text-sm md:text-base")}
+              >
+                {date}
+              </time>
             </div>
 
             <motion.div
-              className="space-y-2 text-white/80 text-sm md:text-base leading-relaxed"
+              className={cn(
+                "space-y-2 text-white/80 leading-relaxed",
+                "text-xs sm:text-sm md:text-base",
+              )}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -69,7 +84,7 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
 
         {(codeLinks || projectLinks) && (
           <motion.div
-            className="pt-2 flex flex-wrap gap-4"
+            className={cn("pt-2 flex flex-wrap", "gap-2 sm:gap-4")}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0 }}
@@ -87,7 +102,12 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
 
         {imageUrls && imageUrls.length > 0 && (
           <motion.div
-            className="mt-6 flex flex-wrap gap-4 w-full justify-center"
+            className={cn(
+              "mt-4 flex w-full justify-center",
+              "flex-col sm:flex-row",
+              "gap-3 sm:gap-4",
+              "sm:mt-6",
+            )}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.1 }}
