@@ -2,7 +2,7 @@
 
 import { Sheet, SheetTrigger, Button, SheetContent, SheetTitle } from "@/shared/ui";
 import { Menu } from "lucide-react";
-import { NAV_ITEMS } from "@/widgets/sidebar/model/sidebarItems";
+import { NAV_ITEMS } from "../model/navItems";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";

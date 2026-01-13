@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { IImageUrl } from "../model/timelineData";
+import { IImageUrl } from "../../timeline/model/timelineData";
 import Link from "next/link";
 import { ExternalLink, Snowflake } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,6 +16,7 @@ import {
   cardContainer,
 } from "@/shared/ui/tv/card";
 import { TechStack } from "./TechStack";
+import { fadeUpWithDelay } from "@/shared/animations";
 
 interface ProjectGalleryProps {
   image: IImageUrl;
@@ -35,10 +36,10 @@ export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
     <motion.div
       key={name}
       className={cardContainer()}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      variants={fadeUpWithDelay(0.2)}
     >
       <ul
         className={cn(

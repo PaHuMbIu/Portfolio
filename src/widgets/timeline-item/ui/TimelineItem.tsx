@@ -2,15 +2,23 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ITimelineItem } from "../model/timelineData";
-import { RoadLine, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline";
+import { ITimelineItem } from "@/widgets/timeline/model/timelineData";
+import { RoadLine, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline-item";
 import { cn } from "@/lib/utils";
+import {
+  fadeUpLeft,
+  staggerParagraphs,
+  fadeUpSmall,
+  fadeUpWithDelay,
+  scaleInWithDelay,
+} from "@/shared/animations";
 
 interface TimelineItemProps {
   item: ITimelineItem;
+  isLast?: boolean;
 }
 
-export const TimelineItem = ({ item }: TimelineItemProps) => {
+export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
   const t = useTranslations("timeline");
   const { id, stack, codeLinks, projectLinks, imageUrls } = item;
 
@@ -20,14 +28,14 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
 
   return (
     <div className="relative flex">
-      <RoadLine />
+      <RoadLine isLast={isLast} />
 
       <motion.div
         className="flex-1 pb-4 sm:pb-8"
-        initial={{ opacity: 0, y: 20, x: -20 }}
-        whileInView={{ opacity: 1, y: 0, x: 0 }}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true, amount: 0 }}
-        transition={{ duration: 0.6 }}
+        variants={fadeUpLeft}
       >
         <article
           className={cn(
@@ -57,23 +65,13 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15,
-                  },
-                },
-              }}
+              variants={staggerParagraphs}
             >
               {description.map((paragraph, index) => (
                 <motion.p
                   className="text-white/85 leading-[1.8] tracking-wide"
                   key={index}
-                  variants={{
-                    hidden: { opacity: 0, y: 10 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-                  }}
+                  variants={fadeUpSmall}
                 >
                   {paragraph}
                 </motion.p>
@@ -85,10 +83,10 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
         {(codeLinks || projectLinks) && (
           <motion.div
             className={cn("pt-2 flex flex-wrap", "gap-2 sm:gap-4")}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={fadeUpWithDelay(0.3)}
           >
             {codeLinks?.map((link, index) => (
               <CodeLinks key={index} link={link} />
@@ -108,10 +106,10 @@ export const TimelineItem = ({ item }: TimelineItemProps) => {
               "gap-3 sm:gap-4",
               "sm:mt-6",
             )}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            variants={scaleInWithDelay(0.1)}
           >
             {imageUrls.map((image, index) => (
               <ProjectGallery key={index} image={image} stack={stack || []} />

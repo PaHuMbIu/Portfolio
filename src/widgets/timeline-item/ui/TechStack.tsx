@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { fadeUpWithDelay } from "@/shared/animations";
 
 interface TechStackProps {
   stack: string[];
@@ -9,10 +10,10 @@ export const TechStack = ({ stack }: TechStackProps) => {
   return (
     <motion.li
       className={cn("flex flex-wrap", "mt-2 sm:mt-4", "gap-1.5 sm:gap-2")}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, amount: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      variants={fadeUpWithDelay(0.2)}
     >
       {stack.map((tech, index) => (
         <span

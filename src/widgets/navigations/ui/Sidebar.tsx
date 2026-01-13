@@ -14,7 +14,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
 } from "@/shared/ui/sidebar";
-import { NAV_ITEMS } from "../model/sidebarItems";
+import { NAV_ITEMS } from "../model/navItems";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
