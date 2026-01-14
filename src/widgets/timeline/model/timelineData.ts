@@ -105,16 +105,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "8",
-    stack: [
-      "React",
-      "Next.js",
-      "TailwindCSS",
-      "TypeScript",
-      "shadcn/ui",
-      "Django",
-      "PostgreSQL",
-      "RTK query",
-    ],
+    stack: ["React", "Next.js", "TailwindCSS", "TypeScript", "shadcn/ui", "Zustand"],
     imageUrls: [{ name: "FilmHub", image: FilmHubImage, url: "Frozen" }],
     codeLinks: [{ name: "FilmHub", url: "NDA" }],
     projectLinks: [{ name: "FilmHub", url: "NDA" }],
