@@ -17,3 +17,4 @@ export * from "./hoverScaleLift";
 export * from "./staggerParagraphs";
 export * from "./shimmerSlide";
 export * from "./iconWiggle";
+export * from "./bounceUp";

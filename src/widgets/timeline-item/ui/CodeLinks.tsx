@@ -6,7 +6,7 @@ import { ICodeLink } from "../../timeline/model/timelineData";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import { Button } from "@/shared/ui/button";
-import { hoverScaleLift, shimmerSlide, iconWiggle } from "@/shared/animations";
+import { hoverScaleLift, iconWiggle } from "@/shared/animations";
 
 interface CodeLinksProps {
   link: ICodeLink;
@@ -24,13 +24,6 @@ export const CodeLinks = ({ link }: CodeLinksProps) => {
         className="text-xs sm:text-sm font-semibold"
       >
         <Link href={url} target="_blank">
-          {!isDisabled && (
-            <motion.div
-              className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
-              variants={shimmerSlide}
-            />
-          )}
-
           <div className="relative z-10 flex items-center gap-2 sm:gap-2.5">
             <motion.div {...(!isDisabled ? iconWiggle : {})}>
               <Github
