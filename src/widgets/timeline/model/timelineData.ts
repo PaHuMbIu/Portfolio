@@ -1,4 +1,4 @@
-import type { StaticImageData } from "next/image";
+import { ICodeLink, IProjectLink, IProjectItem } from "@/shared/types/projects/IProjects";
 import {
   IRobotImage,
   CalculatorImage,
@@ -11,28 +11,12 @@ import {
   Tonex,
 } from "@/shared/images/projects";
 
-export interface ICodeLink {
-  name: string;
-  url: string;
-}
-
-export interface IProjectLink {
-  name: string;
-  url: string;
-}
-
-export interface IImageUrl {
-  name: string;
-  image: StaticImageData;
-  url: string;
-}
-
 export interface ITimelineItem {
   id: string;
   stack?: string[];
   codeLinks?: ICodeLink[];
   projectLinks?: IProjectLink[];
-  imageUrls?: IImageUrl[];
+  projectItems?: IProjectItem[];
 }
 
 export const TIMELINE_DATA: ITimelineItem[] = [
@@ -44,7 +28,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
     stack: ["HTML", "CSS", "JavaScript"],
     codeLinks: [{ name: "LoftHouse", url: "https://github.com/PaHuMbIu/Layout_LoftHouse" }],
     projectLinks: [{ name: "LoftHouse", url: "https://pahumbiu.github.io/Layout_LoftHouse/" }],
-    imageUrls: [
+    projectItems: [
       {
         name: "LoftHouse",
         image: LoftHausImage,
@@ -54,7 +38,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "3",
-    imageUrls: [
+    projectItems: [
       { name: "Calculator", image: CalculatorImage, url: "https://pahumbiu.github.io/Calculator/" },
     ],
     stack: ["HTML", "CSS", "JavaScript"],
@@ -63,7 +47,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "4",
-    imageUrls: [
+    projectItems: [
       { name: "VirusTotal", image: VirusTotalImage, url: "https://pahumbiu.github.io/VirusTotal/" },
     ],
     stack: ["React", "CSS"],
@@ -74,7 +58,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "5",
-    imageUrls: [
+    projectItems: [
       { name: "TimeCraft", image: TimeCraftImage, url: "http://timecraft.delfinnnn.online" },
     ],
     stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
@@ -85,7 +69,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "6",
-    imageUrls: [
+    projectItems: [
       {
         name: "TimeCraft React",
         image: TimeCraftReactImage,
@@ -98,7 +82,9 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "7",
-    imageUrls: [{ name: "iRobot", image: IRobotImage, url: "https://pahumbiu.github.io/iRobot/" }],
+    projectItems: [
+      { name: "iRobot", image: IRobotImage, url: "https://pahumbiu.github.io/iRobot/" },
+    ],
     stack: ["HTML", "SCSS", "JavaScript"],
     codeLinks: [{ name: "iRobot", url: "https://github.com/PaHuMbIu/iRobot" }],
     projectLinks: [{ name: "iRobot", url: "https://pahumbiu.github.io/iRobot/" }],
@@ -106,7 +92,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   {
     id: "8",
     stack: ["React", "Next.js", "TailwindCSS", "TypeScript", "shadcn/ui", "Zustand"],
-    imageUrls: [{ name: "FilmHub", image: FilmHubImage, url: "Frozen" }],
+    projectItems: [{ name: "FilmHub", image: FilmHubImage, url: "Frozen" }],
     codeLinks: [{ name: "FilmHub", url: "NDA" }],
     projectLinks: [{ name: "FilmHub", url: "NDA" }],
   },
@@ -117,7 +103,7 @@ export const TIMELINE_DATA: ITimelineItem[] = [
       { name: "CasperGarant", url: "NDA" },
       { name: "TRONEX-TWA", url: "https://github.com/VladimirBerl/TRONEX-TWA" },
     ],
-    imageUrls: [
+    projectItems: [
       { name: "CasperGarant", image: CasperGarant, url: "https://t.me/CasperGarantBot" },
       { name: "Tonex", image: Tonex, url: "https://t.me/tonexfarm_bot" },
     ],

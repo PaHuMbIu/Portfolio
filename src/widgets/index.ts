@@ -19,3 +19,8 @@ export { StatsCard } from "./home/ui/StatsCard";
 export { AnimatedHeroText } from "./home/ui/AnimatedHeroText";
 export { Timeline } from "./timeline";
 export { TimelineFooter } from "./timeline-footer";
+export { ProjectsGallery } from "./projects-gallery";
+
+// Cards
+export { ProjectCard } from "./project-card/ui/ProjectCard";
+export { GalleryProjectCard } from "./project-card/ui/GalleryProjectCard";

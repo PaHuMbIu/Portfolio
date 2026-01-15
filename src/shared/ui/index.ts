@@ -8,3 +8,4 @@ export * from "./tooltip";
 export * from "./input";
 export * from "./Loader";
 export * from "./TextType";
+export * from "./DecorativeLine";

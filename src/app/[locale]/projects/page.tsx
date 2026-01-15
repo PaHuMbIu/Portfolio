@@ -1,5 +1,11 @@
 "use client";
 
+import { LayoutStar, ProjectsGallery } from "@/widgets";
+
 export default function Projects() {
-  return <h1 className="text-white">Projects</h1>;
+  return (
+    <LayoutStar>
+      <ProjectsGallery />
+    </LayoutStar>
+  );
 }

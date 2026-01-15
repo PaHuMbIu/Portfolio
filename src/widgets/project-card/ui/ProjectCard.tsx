@@ -1,39 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { IImageUrl } from "../../timeline/model/timelineData";
-import Link from "next/link";
-import { ExternalLink, Snowflake } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { IProjectItem } from "@/shared/types/projects/IProjects";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import {
+  cardContainer,
   cardOverlay,
   cardGradientOverlay,
   cardShimmerOverlay,
   cardShimmerEffect,
   cardHoverOverlay,
-  cardContainer,
 } from "@/shared/ui/tv/card";
-import { TechStack } from "./TechStack";
 import { fadeUpWithDelay } from "@/shared/animations";
+import Image from "next/image";
+import { ExternalLink, Snowflake } from "lucide-react";
+import { TechStack } from "@/widgets/timeline-item/ui/TechStack";
+import { ProjectActionButton } from "./ProjectActionButton";
 
-interface ProjectGalleryProps {
-  image: IImageUrl;
+interface ProjectCardProps {
+  project: IProjectItem;
   stack: string[];
 }
 
-export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
+export const ProjectCard = ({ project, stack }: ProjectCardProps) => {
   const t = useTranslations("timeline.projectGallery");
 
-  const { name, image: imageUrl, url } = image;
+  const { name, image, url } = project;
 
   const statusProject = url === "Frozen" ? t("frozen") : t("openProject");
+
   const activeUrl = url === "Frozen" ? null : url;
   const isFrozen = url === "Frozen";
 
   return (
-    <motion.div
+    <motion.article
       key={name}
       className={cardContainer()}
       initial="hidden"
@@ -54,7 +55,7 @@ export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
 
       <div className="relative overflow-hidden rounded-2xl h-full">
         <Image
-          src={imageUrl}
+          src={image}
           alt={name}
           width={500}
           height={400}
@@ -70,15 +71,7 @@ export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
           <div className={cardShimmerEffect()} />
         </div>
 
-        <Link
-          href={activeUrl || ""}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(
-            "absolute inset-0 z-10 flex flex-col justify-end",
-            !activeUrl && "pointer-events-none cursor-default",
-          )}
-        >
+        <motion.div className="absolute inset-0 z-10 flex flex-col justify-end">
           <motion.div
             className={cn(
               "w-full transform translate-y-full group-[&:hover,&:active]:translate-y-0 transition-transform duration-500 ease-out",
@@ -86,27 +79,14 @@ export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
             )}
             initial={false}
           >
-            <div className={cn("flex items-center text-white", "gap-2 sm:gap-3")}>
-              <motion.div
-                className={cn(
-                  "rounded-lg border transition-all duration-300",
-                  "p-1.5 sm:p-2",
-                  isFrozen ?
-                    "bg-slate-800/60 border-slate-600/40"
-                  : "bg-purple-500/20 border-purple-400/40 group-[&:hover,&:active]:bg-purple-500/30 group-[&:hover,&:active]:border-purple-400/60",
-                )}
-              >
-                {isFrozen ?
-                  <Snowflake className={cn("text-slate-300", "w-4 h-4 sm:w-5 sm:h-5")} />
-                : <ExternalLink className={cn("text-purple-200", "w-4 h-4 sm:w-5 sm:h-5")} />}
-              </motion.div>
-
-              <span className={cn("font-semibold tracking-wide", "text-sm sm:text-lg")}>
-                {statusProject}
-              </span>
-            </div>
+            <ProjectActionButton
+              activeUrl={activeUrl || ""}
+              isDisabled={isFrozen}
+              Icon={isFrozen ? Snowflake : ExternalLink}
+              buttonText={statusProject}
+            />
           </motion.div>
-        </Link>
+        </motion.div>
 
         <div className={cardHoverOverlay()} />
       </div>
@@ -130,6 +110,6 @@ export const ProjectGallery = ({ image, stack }: ProjectGalleryProps) => {
           </p>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.article>
   );
 };

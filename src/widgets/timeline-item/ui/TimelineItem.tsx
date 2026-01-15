@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ITimelineItem } from "@/widgets/timeline/model/timelineData";
-import { RoadLine, CodeLinks, ProjectLinks, ProjectGallery } from "@/widgets/timeline-item";
+import { RoadLine, CodeLinks, ProjectLinks } from "@/widgets/timeline-item";
 import { cn } from "@/lib/utils";
 import {
   fadeUpLeft,
@@ -12,6 +12,7 @@ import {
   fadeUpWithDelay,
   scaleInWithDelay,
 } from "@/shared/animations";
+import { ProjectCard } from "@/widgets";
 
 interface TimelineItemProps {
   item: ITimelineItem;
@@ -20,7 +21,7 @@ interface TimelineItemProps {
 
 export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
   const t = useTranslations("timeline");
-  const { id, stack, codeLinks, projectLinks, imageUrls } = item;
+  const { id, stack, codeLinks, projectLinks, projectItems } = item;
 
   const date = t.raw(`timelineData.${id}.date`) as string[];
   const title = t(`timelineData.${id}.title`);
@@ -98,7 +99,7 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
           </motion.div>
         )}
 
-        {imageUrls && imageUrls.length > 0 && (
+        {projectItems && projectItems.length > 0 && (
           <motion.div
             className={cn(
               "mt-4 flex w-full justify-center",
@@ -111,8 +112,8 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
             viewport={{ once: true, amount: 0.1 }}
             variants={scaleInWithDelay(0.1)}
           >
-            {imageUrls.map((image, index) => (
-              <ProjectGallery key={index} image={image} stack={stack || []} />
+            {projectItems.map((project, index) => (
+              <ProjectCard key={index} project={project} stack={stack || []} />
             ))}
           </motion.div>
         )}
