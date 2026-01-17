@@ -7,6 +7,7 @@ import {
   SheetContent,
   SheetTitle,
   SheetDescription,
+  SheetFooter,
 } from "@/shared/ui";
 import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "../model/navItems";
@@ -15,6 +16,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
+import { AppMetadata } from "./AppMetadata";
 
 export const BurgerMenu = () => {
   const t = useTranslations("sidebar");
@@ -33,7 +35,7 @@ export const BurgerMenu = () => {
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="left">
+      <SheetContent side="left" className="flex flex-col h-full">
         <SheetTitle className="sr-only">Navigation menu</SheetTitle>
         <SheetDescription className="sr-only">Main navigation menu for the site</SheetDescription>
 
@@ -69,6 +71,10 @@ export const BurgerMenu = () => {
             );
           })}
         </nav>
+
+        <SheetFooter className="mt-auto pt-4 border-t border-purple-400/20">
+          <AppMetadata />
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );

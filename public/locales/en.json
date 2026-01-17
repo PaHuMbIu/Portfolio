@@ -7,7 +7,9 @@
     "Games": "Games",
     "Projects": "Projects",
     "Tools": "Tools",
-    "About me": "About me"
+    "About me": "About me",
+    "version": "Version",
+    "createdBy": "Created by"
   },
   "technologyCard": {
     "reactDescription": "is a library for creating user interfaces",

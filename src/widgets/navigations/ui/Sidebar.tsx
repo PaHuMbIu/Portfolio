@@ -13,12 +13,14 @@ import {
   SidebarHeader,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarFooter,
 } from "@/shared/ui/sidebar";
 import { NAV_ITEMS } from "../model/navItems";
 import { usePathname } from "next/navigation";
 import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
+import { AppMetadata } from "./AppMetadata";
 
 export const SidebarNav = () => {
   const t = useTranslations("sidebar");
@@ -76,6 +78,10 @@ export const SidebarNav = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+
+      <SidebarFooter className="mt-auto pt-4 border-t border-purple-400/20">
+        <AppMetadata isCollapsed={!open} />
+      </SidebarFooter>
     </Sidebar>
   );
 };
