@@ -17,6 +17,7 @@ import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { AppMetadata } from "./AppMetadata";
+import { ChangelogDialog } from "../../changelog-dialog/ui/ChangelogDialog";
 
 export const BurgerMenu = () => {
   const t = useTranslations("sidebar");
@@ -72,9 +73,15 @@ export const BurgerMenu = () => {
           })}
         </nav>
 
-        <SheetFooter className="mt-auto pt-4 border-t border-purple-400/20">
-          <AppMetadata />
-        </SheetFooter>
+        <div className="mt-auto">
+          <div className="flex items-center overflow-x-hidden mb-4 px-4">
+            <ChangelogDialog />
+          </div>
+
+          <SheetFooter className="pt-2 px-4 border-t border-purple-400/20">
+            <AppMetadata />
+          </SheetFooter>
+        </div>
       </SheetContent>
     </Sheet>
   );

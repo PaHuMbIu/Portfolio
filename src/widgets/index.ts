@@ -24,3 +24,6 @@ export { ProjectsGallery } from "./projects-gallery";
 // Cards
 export { ProjectCard } from "./project-card/ui/ProjectCard";
 export { GalleryProjectCard } from "./project-card/ui/GalleryProjectCard";
+
+// Dialogs
+export { ChangelogDialog } from "./changelog-dialog";

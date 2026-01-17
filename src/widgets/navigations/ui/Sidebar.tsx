@@ -21,6 +21,7 @@ import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { AppMetadata } from "./AppMetadata";
+import { ChangelogDialog } from "../../changelog-dialog/ui/ChangelogDialog";
 
 export const SidebarNav = () => {
   const t = useTranslations("sidebar");
@@ -77,6 +78,10 @@ export const SidebarNav = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
+        <div className="mt-auto flex items-center overflow-x-hidden mb-4">
+          <ChangelogDialog />
+        </div>
       </SidebarContent>
 
       <SidebarFooter className="mt-auto pt-4 border-t border-purple-400/20">

@@ -11,6 +11,19 @@
     "version": "Version",
     "createdBy": "Created by"
   },
+  "changelog": {
+    "button": "Changelog",
+    "title": "Changelog",
+    "description": "List of all updates and releases of the project",
+    "releases": {
+      "0": {
+        "title": "Portfolio website release",
+        "changes": {
+          "0": "Portfolio website release"
+        }
+      }
+    }
+  },
   "technologyCard": {
     "reactDescription": "is a library for creating user interfaces",
     "javascriptDescription": "is a programming language for web development",
@@ -90,8 +103,7 @@
         "title": "Start",
         "description": [
           "The starting point. The day when I entered the world of programming.",
-          "The future seemed dark and uncertain then,",
-          "and my padding-left: 900px; already seemed to me a sign of real \"professionalism\"."
+          "The future seemed dark and uncertain then, and my padding-left: 900px; already seemed to me a sign of real \"professionalism\"."
         ]
       },
       "2": {
@@ -110,8 +122,7 @@
         "description": [
           "After completing tasks on the military \"frontend\". Returning, I focused on improving my developer skills. The motivation was extremely clear - to find my first job in IT.",
           "Refreshing my knowledge a bit, having laid out a random page from the internet and closing the stage with layout, I moved on to the JavaScript base.",
-          "And, like in that meme about beginners sweeping products off the shelves, where instead of products - calculators, I also started with it.",
-          "Yes, a calculator. Probably, this is the base..."
+          "And, like in that meme about beginners sweeping products off the shelves, where instead of products - calculators, I also started with it. Yes, a calculator. Probably, this is the base..."
         ]
       },
       "4": {
@@ -120,7 +131,7 @@
         "description": [
           "After learning how much easier it is to assemble counters compared to native JavaScript, I was genuinely surprised.",
           "Of course, I started using React not quite for its intended purpose.",
-          "I - like using a bazooka against sparrows, started making NOT a powerful online store, NOT creating complex interfaces, as befits React, but... Just laying out a page...",
+          "I (like using a bazooka against sparrows) started making NOT a powerful online store, NOT creating complex interfaces, as befits React, but... Just laying out a page...",
           "However, the main goal was to understand the React ecosystem and its capabilities at a basic level."
         ]
       },
@@ -130,7 +141,7 @@
         "description": [
           "After touching React. I resolutely set myself up for a Fullstack project.",
           "This is an MPA. There is a database and authorization (though from 1979). The project was aimed at training REST API + CRUD.",
-          "Can you guess what it is? This phrase is associated by beginners with only one thing - TODO-LIST!"
+          "The most popular project among beginners - be like."
         ]
       },
       "6": {
@@ -154,10 +165,10 @@
         "date": "May 17, 2025",
         "title": "Team project: explosive growth",
         "description": [
-          "The day when explosive growth happened in geometric progression. But not everything at once. At first, it was another pet-project.",
-          "Approximately at the end of May, I got the idea to assemble a team of developers and a designer for its development. All this was aimed at simulating team experience, which is important in IT.",
-          "Spending a huge amount of time at that moment, not very good project documentation and various links for invitations, I started sending everything to all popular forums, YouTube videos and telegram chats.",
-          "Having gathered the necessary number of guys and starting development, things, let's say, didn't go quite smoothly. Our noob experience didn't give significant progress, and the future of the project was becoming more and more uncertain... The idea was fading, the desire too.",
+          "The day when growth went on an exponential trajectory. But not everything at once. At first, it was another pet-project.",
+          "Approximately in the middle of May, I had the idea to assemble a team of developers and a designer to implement the project. The main goal was to simulate team experience, which is extremely important in the IT sphere.",
+          "Spending a lot of time creating detailed project documentation and various links for invitations, I started sharing them on popular forums, under YouTube videos, in telegram communities.",
+          "When the team was assembled and work started, it became clear that things were not going quite smoothly. Our modest experience did not allow us to move forward, and the future of the project was shrouded in fog. The idea slowly faded along with motivation.",
           "Suddenly, two people got in touch, their difference was that they were not beginners. These were two confident fullstack-middle developers. Despite their work - they came for the idea.",
           "And here, perhaps, this is the moment I mentioned at the beginning: significant growth in architecture, new knowledge and a broader view of the entire development infrastructure.",
           "Throughout development, developers of various specialties came to us - from database balancers to Tech Leads. A significant part of the time was spent on normalizing processes, so we didn't succeed in development, and the project had to be frozen due to the need to find a job."

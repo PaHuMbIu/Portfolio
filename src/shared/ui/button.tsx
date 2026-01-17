@@ -89,6 +89,15 @@ const buttonVariants = cva(
           "[&:hover,&:active]:bg-red-500/20 [&:hover,&:active]:text-red-400",
           "[&_svg]:size-5!",
         ),
+        changelog: cn(
+          "w-full justify-start gap-2 text-xs font-medium",
+          "border border-purple-500/30 rounded-lg p-2 pl-[9px]",
+          "text-purple-300/80 [&:hover,&:active]:text-purple-200!",
+          "bg-purple-500/5 [&:hover,&:active]:bg-purple-500/10!",
+          "[&:hover,&:active]:border-purple-500/50",
+          "transition-all duration-200",
+          "backdrop-blur-sm whitespace-nowrap",
+        ),
       },
       hover: {
         purpleHover: cn(
