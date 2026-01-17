@@ -9,3 +9,6 @@ export * from "./input";
 export * from "./Loader";
 export * from "./TextType";
 export * from "./DecorativeLine";
+export * from "./select";
+export * from "./popover";
+export * from "./checkbox";
