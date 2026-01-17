@@ -1,5 +1,5 @@
-import { Input, Popover, PopoverTrigger, PopoverContent, Checkbox } from "@/shared/ui";
-import { Search, Filter } from "lucide-react";
+import { Input, Popover, PopoverTrigger, PopoverContent, Checkbox, Button } from "@/shared/ui";
+import { Search, Filter, X } from "lucide-react";
 import { useProjectsFilters } from "../model/useProjectsFilters";
 import { useTranslations } from "next-intl";
 
@@ -16,6 +16,7 @@ export const ProjectsGalleryFilters = ({
   searchQuery,
   handleCheckedTechnology,
   technologiesFilters,
+  setTechnologiesFilters,
 }: ProjectsGalleryFiltersProps) => {
   const t = useTranslations("projects.filters");
 
@@ -48,12 +49,20 @@ export const ProjectsGalleryFilters = ({
         </PopoverTrigger>
 
         <PopoverContent variant="glass" className="p-0">
-          <div className="p-4 border-b border-white/10">
-            <h3 className="text-sm font-semibold text-white">{t("technologies")}</h3>
+          <div className="p-4 border-b border-white/10 flex items-center justify-between">
+            <div>
+              <h3 className="text-sm font-semibold text-white">{t("technologies")}</h3>
 
-            <p className="text-xs text-white/60 mt-1">
-              {t("selected")}: {technologiesFilters.length}
-            </p>
+              <p className="text-xs text-white/60 mt-1">
+                {t("selected")}: {technologiesFilters.length}
+              </p>
+            </div>
+
+            {technologiesFilters.length > 0 && (
+              <Button variant="clear" onClick={() => setTechnologiesFilters([])}>
+                <X />
+              </Button>
+            )}
           </div>
 
           <ul className="p-3 max-h-[300px] overflow-y-auto space-y-1">

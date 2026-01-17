@@ -84,6 +84,11 @@ const buttonVariants = cva(
           "bg-linear-to-r from-purple-400/40 via-purple-600/25 to-transparent shadow-[0_4px_20px_rgba(138,43,226,0.4)] border-l-purple-300/80 translate-x-0.5",
           "active:from-purple-400/50 active:via-purple-600/35 active:to-transparent active:shadow-[0_4px_25px_rgba(138,43,226,0.5)] active:border-l-purple-300/90",
         ),
+        clear: cn(
+          "h-8 w-8 p-0 text-white/60 rounded-md transition-colors duration-200",
+          "[&:hover,&:active]:bg-red-500/20 [&:hover,&:active]:text-red-400",
+          "[&_svg]:size-5!",
+        ),
       },
       hover: {
         purpleHover: cn(
