@@ -72,12 +72,17 @@
       "selected": "Выбрано"
     }
   },
+  "modalSoon": {
+    "title": "Скоро",
+    "description": "Этот раздел находится в разработке. Скоро здесь появятся новые инструменты и утилиты."
+  },
 
   "timeline": {
     "title": "Мой путь",
     "projectGallery": {
       "openProject": "Открыть проект",
-      "frozen": "Заморожен"
+      "frozen": "Заморожен",
+      "code": "Код"
     },
     "timelineData": {
       "1": {

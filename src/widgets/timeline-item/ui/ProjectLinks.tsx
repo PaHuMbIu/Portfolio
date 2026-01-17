@@ -4,7 +4,7 @@ import { cn } from "@/shared/lib/utils";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { IProjectLink } from "../../timeline/model/timelineData";
+import { IProjectLink } from "@/shared/types/projects/IProjects";
 import { Button } from "@/shared/ui/button";
 import { hoverScaleLift, shimmerSlide, iconWiggle } from "@/shared/animations";
 

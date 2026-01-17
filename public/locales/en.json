@@ -72,12 +72,17 @@
       "selected": "Selected"
     }
   },
+  "modalSoon": {
+    "title": "Soon",
+    "description": "This section is under development. New tools and utilities will appear here soon."
+  },
 
   "timeline": {
     "title": "My way",
     "projectGallery": {
       "openProject": "Open project",
-      "frozen": "Frozen"
+      "frozen": "Frozen",
+      "code": "Code"
     },
     "timelineData": {
       "1": {

@@ -17,12 +17,12 @@ export const AppMetadata = ({ isCollapsed = false }: AppMetadataProps) => {
         isCollapsed ? "opacity-0" : "opacity-100",
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between whitespace-nowrap">
         <span>{t("version")}:</span>
         <span className="font-medium">0.1.0</span>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between whitespace-nowrap">
         <span>{t("createdBy")}:</span>
         <span className="font-medium">Pavel</span>
       </div>

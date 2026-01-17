@@ -83,7 +83,7 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
                 activeUrl={activeCodeLink || ""}
                 isDisabled={isNDA}
                 Icon={isNDA ? Lock : Code}
-                buttonText="Code"
+                buttonText={t("code")}
               />
             </div>
           </motion.div>

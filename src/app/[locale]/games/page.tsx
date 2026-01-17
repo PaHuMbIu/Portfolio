@@ -1,5 +1,12 @@
 "use client";
 
+import { LayoutStar } from "@/widgets";
+import { SoonScreen } from "@/shared/ui";
+
 export default function Games() {
-  return <h1 className="text-white">Games</h1>;
+  return (
+    <LayoutStar>
+      <SoonScreen />
+    </LayoutStar>
+  );
 }

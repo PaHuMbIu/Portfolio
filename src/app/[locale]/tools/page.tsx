@@ -1,5 +1,12 @@
 "use client";
 
+import { LayoutStar } from "@/widgets";
+import { SoonScreen } from "@/shared/ui";
+
 export default function Tools() {
-  return <h1 className="text-white">Tools</h1>;
+  return (
+    <LayoutStar>
+      <SoonScreen />
+    </LayoutStar>
+  );
 }

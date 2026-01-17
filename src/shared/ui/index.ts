@@ -12,3 +12,4 @@ export * from "./DecorativeLine";
 export * from "./select";
 export * from "./popover";
 export * from "./checkbox";
+export * from "./SoonScreen";
