@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TimelineItem } from "@/widgets/timeline-item";
 import { TIMELINE_DATA } from "../model/timelineData";
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { fadeDown } from "@/shared/animations";
 
 export const Timeline = () => {

@@ -12,7 +12,7 @@ import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "../model/navItems";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 

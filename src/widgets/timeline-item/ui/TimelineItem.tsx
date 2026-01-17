@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ITimelineItem } from "@/widgets/timeline/model/timelineData";
 import { RoadLine, CodeLinks, ProjectLinks } from "@/widgets/timeline-item";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import {
   fadeUpLeft,
   staggerParagraphs,

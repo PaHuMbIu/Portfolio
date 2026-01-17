@@ -3,7 +3,7 @@
 import { IProjectItem } from "@/shared/types/projects/IProjects";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import {
   cardContainer,
   cardOverlay,

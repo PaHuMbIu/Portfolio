@@ -1,11 +1,13 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export const HomeAboutProject = () => {
   const t = useTranslations("home");
+  const locale = useLocale();
 
   return (
     <motion.div
@@ -34,7 +36,16 @@ export const HomeAboutProject = () => {
           <div className="w-32 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mb-4"></div>
 
           <p className="text-sm md:text-lg text-white/80 text-center max-w-3xl leading-relaxed">
-            {t("aboutProjectDescription")}
+            {t.rich("aboutProjectDescription", {
+              link: (chunks) => (
+                <Link
+                  href={`/${locale}/about-me`}
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200 decoration-cyan-400/50 hover:decoration-cyan-300"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </div>
 

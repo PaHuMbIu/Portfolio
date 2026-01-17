@@ -17,12 +17,12 @@ export const HomeTechnologies = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="inline-flex items-center gap-3 mb-4">
-          <div className="p-2 md:block hidden rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30">
-            <Code2 className="w-5 h-5 text-purple-300" />
+        <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 flex-wrap justify-center">
+          <div className="hidden min-[410px]:block p-1.5 min-[410px]:p-2 rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 shrink-0">
+            <Code2 className="w-4 h-4 min-[410px]:w-5 min-[410px]:h-5 text-purple-300" />
           </div>
 
-          <h2 className="text-lg md:text-3xl font-bold text-white text-center">
+          <h2 className="text-base min-[410px]:text-lg md:text-2xl lg:text-3xl font-bold text-white text-center">
             {t("technologiesTitle")}
           </h2>
         </div>
@@ -31,7 +31,12 @@ export const HomeTechnologies = () => {
           {t("technologiesDescription")}
         </p>
 
-        <div className="w-32 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mt-4"></div>
+        <motion.div
+          className="w-32 h-px bg-linear-to-r from-transparent via-purple-400/50 to-transparent mt-4"
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        />
       </motion.div>
 
       <TechnologySlider />

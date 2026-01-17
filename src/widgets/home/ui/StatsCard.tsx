@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { IStatsData } from "../model/statsData";
 import { useTranslations } from "next-intl";
 import { LucideIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 interface StatsCardProps extends IStatsData {
   index: number;

@@ -29,7 +29,7 @@
     "technologiesTitle": "Technologies I use:",
     "technologiesDescription": "Click on any card to learn more",
     "aboutProjectTitle": "About the project",
-    "aboutProjectDescription": "My portfolio is an interactive space where various tools, features and animations are collected. Here you can get acquainted with my roadmap in programming, the technologies I master, as well as see experiments with tools, algorithms and animations created by me. There are both fun and completely useless features - just for fun :D",
+    "aboutProjectDescription": "My portfolio is an interactive space where various tools, features and animations are collected. Here you can get acquainted with my <link>roadmap</link> in programming, the technologies I master, as well as see experiments with tools, algorithms and animations created by me. There are both fun and completely useless features - just for fun :D",
     "stats": {
       "projects": {
         "label": "Projects"

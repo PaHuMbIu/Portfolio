@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { motion } from "framer-motion";
 import { ArrowRight, LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";

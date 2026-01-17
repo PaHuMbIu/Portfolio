@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { bounceUp } from "@/shared/animations";
 
 export const TimelineFooter = () => {

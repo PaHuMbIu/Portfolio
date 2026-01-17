@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { scaleSpring, pulseGlow, scaleYUp } from "@/shared/animations";
 
 interface RoadLineProps {
