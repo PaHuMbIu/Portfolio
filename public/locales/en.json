@@ -58,6 +58,19 @@
       }
     }
   },
+  "projects": {
+    "title": "My projects",
+    "projectCount": "projects",
+    "foundProjects": "found projects",
+    "filters": {
+      "search": "Search projects...",
+      "filters": "Filters",
+      "found": "found",
+      "technologies": "Technologies",
+      "selected": "Selected"
+    }
+  },
+
   "timeline": {
     "title": "My way",
     "projectGallery": {

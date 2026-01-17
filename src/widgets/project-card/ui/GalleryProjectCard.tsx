@@ -65,7 +65,7 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
           <div className={cardShimmerEffect()} />
         </div>
 
-        <motion.div className="absolute inset-0 z-10 flex flex-col justify-end">
+        <div className="absolute inset-0 z-10 flex flex-col justify-end">
           <motion.div
             className={cn(
               "w-full transform translate-y-full group-[&:hover,&:active]:translate-y-0 transition-transform duration-500 ease-out",
@@ -89,7 +89,7 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
               />
             </div>
           </motion.div>
-        </motion.div>
+        </div>
 
         <div className={cardHoverOverlay()} />
       </div>

@@ -58,6 +58,19 @@
       }
     }
   },
+  "projects": {
+    "title": "Мои проекты",
+    "projectCount": "проектов",
+    "foundProjects": "найдено проектов",
+    "filters": {
+      "search": "Поиск проектов...",
+      "filters": "Фильтры",
+      "found": "найдено",
+      "technologies": "Технологии",
+      "selected": "Выбрано"
+    }
+  },
+
   "timeline": {
     "title": "Мой путь",
     "projectGallery": {
