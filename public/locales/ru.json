@@ -40,8 +40,8 @@
       "experience": {
         "label": "Года опыта"
       },
-      "projectsCompleted": {
-        "label": "Задач выполнено"
+      "repositories": {
+        "label": "Репозиториев"
       }
     },
     "cta": {

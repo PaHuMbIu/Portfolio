@@ -25,7 +25,7 @@ export const ProjectsGalleryFilters = ({
   return (
     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
       <form
-        className="relative w-full sm:w-auto sm:min-w-[280px] group appearance-none"
+        className="relative w-full sm:w-auto sm:max-w-[280px] group appearance-none"
         onSubmit={(e) => e.preventDefault()}
       >
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-purple-400/60 pointer-events-none z-10 transition-colors duration-200 group-focus-within:text-purple-400" />
@@ -48,7 +48,7 @@ export const ProjectsGalleryFilters = ({
           )}
         </PopoverTrigger>
 
-        <PopoverContent variant="glass" className="p-0">
+        <PopoverContent variant="glass" className="p-0 z-10">
           <div className="p-4 border-b border-white/10 flex items-center justify-between">
             <div>
               <h3 className="text-sm font-semibold text-white">{t("technologies")}</h3>

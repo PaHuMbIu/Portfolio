@@ -59,7 +59,7 @@ export const SidebarNav = () => {
 
                         <span
                           className={cn(
-                            "sidebar-item-text text-base font-medium whitespace-nowrap text-white transition-default",
+                            "sidebar-item-text text-base font-medium whitespace-nowrap text-white transition-200ms ease-in-out",
                             open ?
                               "opacity-100 translate-x-0"
                             : "opacity-0 -translate-x-2 pointer-events-none",

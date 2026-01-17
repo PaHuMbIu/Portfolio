@@ -40,8 +40,8 @@
       "experience": {
         "label": "Years of experience"
       },
-      "projectsCompleted": {
-        "label": "Tasks completed"
+      "repositories": {
+        "label": "Repositories"
       }
     },
     "cta": {

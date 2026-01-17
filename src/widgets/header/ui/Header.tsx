@@ -9,7 +9,7 @@ import { BurgerMenu } from "@/widgets";
 export const Header = () => {
   return (
     <header className="sticky top-0 left-0 right-0 pt-0 z-50 bg-[#8A2BE208] backdrop-blur-xl">
-      <nav className="relative flex items-center justify-between px-8 py-4">
+      <nav className="relative flex items-center justify-between px-4 py-2 md:px-8 md:py-4">
         <div className="flex flex-row-reverse md:flex-row items-center gap-2 w-full justify-end">
           <LanguageSwitcher />
 

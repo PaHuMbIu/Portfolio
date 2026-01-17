@@ -54,9 +54,7 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
           alt={projectName}
           width={500}
           height={400}
-          className={cn(
-            "w-full h-full object-cover transition-all duration-700 group-[&:hover,&:active]:scale-110 group-[&:hover,&:active]:brightness-110",
-          )}
+          className="w-full h-full object-cover transition-all duration-700 group-[&:hover,&:active]:scale-110 group-[&:hover,&:active]:brightness-110"
         />
 
         <div className={cardGradientOverlay({ frozen: isFrozen })} />

@@ -28,8 +28,8 @@ export const STATS_DATA: IStatsData[] = [
   },
   {
     icon: Zap,
-    keyId: "projectsCompleted",
+    keyId: "repositories",
     color: "from-yellow-500 to-orange-500",
-    value: "50+",
+    value: "15+",
   },
 ];

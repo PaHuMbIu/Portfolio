@@ -254,7 +254,6 @@ function SidebarTrigger({
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       variant="ghost"
-      size="icon-xl"
       className={cn(
         "absolute right-[-13px] top-[77px] z-50",
         "transition-all duration-300 ease-out",
@@ -460,7 +459,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
       data-sidebar="menu-item"
       className={cn(
         "group/menu-item relative",
-        "text-white w-full hover:bg-transparent transition-default",
+        "text-white w-full hover:bg-transparent transition-200ms ease-in-out",
         className,
       )}
       {...props}

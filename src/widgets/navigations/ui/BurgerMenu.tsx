@@ -1,6 +1,13 @@
 "use client";
 
-import { Sheet, SheetTrigger, Button, SheetContent, SheetTitle } from "@/shared/ui";
+import {
+  Sheet,
+  SheetTrigger,
+  Button,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+} from "@/shared/ui";
 import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "../model/navItems";
 import Link from "next/link";
@@ -28,6 +35,7 @@ export const BurgerMenu = () => {
 
       <SheetContent side="left">
         <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+        <SheetDescription className="sr-only">Main navigation menu for the site</SheetDescription>
 
         <nav className="flex flex-col gap-2 mt-8">
           {NAV_ITEMS.map((item) => {
