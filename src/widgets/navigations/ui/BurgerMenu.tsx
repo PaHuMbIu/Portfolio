@@ -18,8 +18,11 @@ import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { AppMetadata } from "./AppMetadata";
 import { ChangelogDialog } from "../../changelog-dialog/ui/ChangelogDialog";
+import { useState, useEffect } from "react";
 
 export const BurgerMenu = () => {
+  const [open, setOpen] = useState(false);
+
   const t = useTranslations("sidebar");
   const locale = useLocale();
   const pathname = usePathname();
@@ -28,8 +31,10 @@ export const BurgerMenu = () => {
 
   const isActive = (href: string) => pathnameWithoutLocale === href;
 
+  useEffect(() => setOpen(false), [pathname]);
+
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="bordered" className="md:hidden block justify-end">
           <Menu className="w-4 h-4 " />
