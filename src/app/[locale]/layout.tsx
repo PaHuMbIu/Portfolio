@@ -20,36 +20,41 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pavel Tech",
-  description: "Portfolio of Pavel",
+  metadataBase: new URL("https://www.paveltech.ru"),
+
+  title: "Pavel Tech – Портфолио Frontend-разработчика",
+  description: "Искусство Frontend-разработки. Портфолио проектов на React/TypeScript.",
+
   icons: {
     icon: "/logo.svg",
   },
+
   openGraph: {
     title: "Pavel Tech – Портфолио Frontend-разработчика",
     description: "Искусство Frontend-разработки. Портфолио проектов на React/TypeScript.",
-    url: "https://front-craft.ru",
+    url: "https://www.paveltech.ru",
     siteName: "Pavel Tech",
     locale: "ru_RU",
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.paveltech.ru/og-image.png",
         width: 1200,
         height: 630,
         alt: "Pavel Tech Portfolio",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Pavel Tech – Портфолио Frontend-разработчика",
     description: "Искусство Frontend-разработки. Портфолио проектов на React/TypeScript.",
-    images: ["/og-image.png"],
+    images: ["https://www.paveltech.ru/og-image.png"],
   },
-  metadataBase: new URL("https://front-craft.ru"),
+
   alternates: {
-    canonical: "/",
+    canonical: "https://www.paveltech.ru",
   },
 };
 
