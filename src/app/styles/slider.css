@@ -2,7 +2,6 @@
 .swiper-track {
   padding-top: 48px !important;
   margin: 0 auto;
-  /* Add horizontal padding for hover effects on edge slides */
   padding-left: 24px !important;
   /* padding-right: 2px !important; */
 }
