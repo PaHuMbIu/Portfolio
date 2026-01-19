@@ -80,12 +80,13 @@ export const SidebarNav = () => {
         </SidebarGroup>
 
         <div className="mt-auto flex items-center overflow-x-hidden mb-4">
-          <ChangelogDialog />
+          <AppMetadata isCollapsed={!open} />
         </div>
       </SidebarContent>
 
-      <SidebarFooter className="mt-auto pt-4 border-t border-purple-400/20">
-        <AppMetadata isCollapsed={!open} />
+      <SidebarFooter className="pt-4 p-0!">
+        <hr className="border-t border-purple-400/20 mb-2" />
+        <ChangelogDialog />
       </SidebarFooter>
     </Sidebar>
   );

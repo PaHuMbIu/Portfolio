@@ -5,6 +5,7 @@ import "swiper/css/autoplay";
 import "swiper/css/effect-creative";
 import { CSSProperties, ReactNode } from "react";
 import { SidebarNav, Header } from "@/widgets";
+import { StarrySkyProvider } from "@/app/providers";
 import { SidebarProvider } from "@/shared/ui/sidebar";
 import { cookies } from "next/headers";
 import { EXPANDED_SIDEBAR_WIDTH, COLLAPSED_SIDEBAR_WIDTH } from "@/shared/constants";
@@ -74,20 +75,22 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
     <html lang={locale} className={inter.variable}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Header />
+          <StarrySkyProvider>
+            <Header />
 
-          <SidebarProvider
-            defaultOpen={defaultOpen}
-            style={
-              {
-                "--sidebar-width": `${EXPANDED_SIDEBAR_WIDTH}px`,
-                "--sidebar-width-icon": `${COLLAPSED_SIDEBAR_WIDTH}px`,
-              } as CSSProperties
-            }
-          >
-            <SidebarNav />
-            {children}
-          </SidebarProvider>
+            <SidebarProvider
+              defaultOpen={defaultOpen}
+              style={
+                {
+                  "--sidebar-width": `${EXPANDED_SIDEBAR_WIDTH}px`,
+                  "--sidebar-width-icon": `${COLLAPSED_SIDEBAR_WIDTH}px`,
+                } as CSSProperties
+              }
+            >
+              <SidebarNav />
+              {children}
+            </SidebarProvider>
+          </StarrySkyProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -5,7 +5,7 @@ export { Header } from "./header/ui/Header";
 export { SidebarNav } from "./navigations/ui/Sidebar";
 export { BurgerMenu } from "./navigations/ui/BurgerMenu";
 
-export { LayoutStar } from "./layout-star/ui/LayoutStar";
+export { LayoutStar } from "./layout-star";
 export { HomeHero } from "./home/ui/HomeHero";
 export { HomeTechnologies } from "./home/ui/HomeTechnologies";
 export { HomeAboutProject } from "./home/ui/HomeAboutProject";

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   experimentalTernaries: true,
   experimentalOperatorPosition: "start",
   printWidth: 100,

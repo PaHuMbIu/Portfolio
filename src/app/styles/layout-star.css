@@ -10,6 +10,9 @@
   pointer-events: none;
   z-index: 0;
   background-repeat: repeat;
+  will-change: background-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .stars {

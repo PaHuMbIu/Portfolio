@@ -1,13 +1,30 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Circle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/shared/lib/utils";
-import { scaleSpring, pulseGlow, scaleYUp } from "@/shared/animations";
+import { scaleSpring, pulseGlow } from "@/shared/animations";
 
 interface RoadLineProps {
   isLast?: boolean;
 }
 
 export const RoadLine = ({ isLast = false }: RoadLineProps) => {
+  const lineRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: isMounted && !isLast ? lineRef : undefined,
+    offset: ["start center", "end center"],
+  });
+
+  const lineScaleY = useTransform(scrollYProgress, [0, 1], [0, 1], { clamp: true });
+
   return (
     <div className={cn("relative flex flex-col items-center", "min-w-[40px] sm:min-w-[60px]")}>
       <motion.div
@@ -37,19 +54,17 @@ export const RoadLine = ({ isLast = false }: RoadLineProps) => {
         </div>
       </motion.div>
 
-      {!isLast && (
+      <div ref={lineRef} className={cn("relative w-[4px] flex-1", isLast && "hidden")}>
         <motion.div
-          className="relative w-[4px] flex-1"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={scaleYUp}
-        >
-          <div className="absolute inset-0 bg-linear-to-b from-purple-500 via-purple-400/80 to-purple-400/40 rounded-full" />
+          className="absolute inset-0 bg-linear-to-b from-purple-500 via-purple-400/80 to-purple-400/40 rounded-full"
+          style={{ scaleY: lineScaleY, transformOrigin: "top" }}
+        />
 
-          <div className="absolute inset-0 bg-linear-to-b from-purple-400/50 via-purple-400/30 to-transparent blur-[2px] rounded-full" />
-        </motion.div>
-      )}
+        <motion.div
+          className="absolute inset-0 bg-linear-to-b from-purple-400/50 via-purple-400/30 to-transparent blur-[2px] rounded-full"
+          style={{ scaleY: lineScaleY, transformOrigin: "top" }}
+        />
+      </div>
     </div>
   );
 };
