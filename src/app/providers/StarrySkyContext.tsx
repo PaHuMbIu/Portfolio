@@ -29,7 +29,6 @@ export function StarrySkyProvider({ children, defaultEnabled = true }: StarrySky
 
   useEffect(() => {
     setIsMounted(true);
-    // Загружаем состояние из localStorage при монтировании
     const savedState = localStorage.getItem("starry_sky_enabled");
     if (savedState !== null) {
       setIsEnabled(savedState === "true");
