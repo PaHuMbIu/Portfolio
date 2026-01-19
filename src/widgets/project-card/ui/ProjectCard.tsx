@@ -98,7 +98,7 @@ export const ProjectCard = ({ project, stack }: ProjectCardProps) => {
       >
         <div
           className={cn(
-            "bg-black/70 backdrop-blur-xl rounded-xl border border-white/30 shadow-xl",
+            "bg-black/70 rounded-xl border border-white/30 shadow-xl",
             "px-2 py-1 sm:px-4 sm:py-2",
           )}
         >

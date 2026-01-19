@@ -52,7 +52,7 @@ function SheetContent({
       <SheetPrimitive.Content
         data-slot="sheet-content"
         className={cn(
-          "bg-linear-to-r from-[rgba(138, 43, 226, 0.15)] via-[rgba(138, 43, 226, 0.1)] to-[rgba(138, 43, 226, 0.05)] backdrop-blur-xl border-white/20 data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-2xl transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "bg-black/95 border-white/20 data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg md:shadow-2xl data-[state=closed]:duration-300 data-[state=open]:duration-500 transform-gpu will-change-transform",
           side === "right"
             && "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
           side === "left"
@@ -66,7 +66,7 @@ function SheetContent({
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 transition-all duration-200 [&:hover,&:active]:bg-white/20 [&:hover,&:active]:border-white/30 [&:hover,&:active]:text-white [&:hover,&:active]:scale-110 [&:hover,&:active]:shadow-xl focus:outline-none disabled:pointer-events-none shadow-lg">
+        <SheetPrimitive.Close className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white/80 transition-all duration-200 [&:hover,&:active]:bg-white/20 [&:hover,&:active]:border-white/30 [&:hover,&:active]:text-white [&:hover,&:active]:scale-110 md:[&:hover,&:active]:shadow-xl focus:outline-none disabled:pointer-events-none shadow-md md:shadow-lg">
           <XIcon className="size-4" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>

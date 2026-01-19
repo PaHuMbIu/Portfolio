@@ -40,7 +40,7 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
       >
         <article
           className={cn(
-            "relative rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 backdrop-blur-sm border border-white/10 shadow-lg shadow-purple-500/5",
+            "relative rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 border border-white/10 shadow-lg shadow-purple-500/5",
             "p-3 sm:p-4 md:p-5",
           )}
         >

@@ -35,7 +35,7 @@ export const RoadLine = ({ isLast = false }: RoadLineProps) => {
         variants={scaleSpring}
       >
         <motion.div
-          className="absolute w-8 h-8 rounded-full bg-purple-500/30 blur-md"
+          className="absolute w-8 h-8 rounded-full bg-purple-500/30"
           animate={pulseGlow.animate}
           transition={pulseGlow.transition}
         />
@@ -61,7 +61,7 @@ export const RoadLine = ({ isLast = false }: RoadLineProps) => {
         />
 
         <motion.div
-          className="absolute inset-0 bg-linear-to-b from-purple-400/50 via-purple-400/30 to-transparent blur-[2px] rounded-full"
+          className="absolute inset-0 bg-linear-to-b from-purple-400/50 via-purple-400/30 to-transparent rounded-full"
           style={{ scaleY: lineScaleY, transformOrigin: "top" }}
         />
       </div>

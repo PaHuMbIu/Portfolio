@@ -20,7 +20,7 @@ export const TimelineFooter = () => {
         className={cn(
           "group relative overflow-hidden rounded-full p-4",
           "bg-linear-to-br from-purple-500/20 to-pink-500/20",
-          "backdrop-blur-sm border border-white/10",
+          "border border-white/10",
           "[&:hover,&:active]:border-purple-400/50 [&:hover,&:active]:shadow-lg [&:hover,&:active]:shadow-purple-500/30",
           "cursor-pointer",
         )}

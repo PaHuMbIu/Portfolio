@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const cardOverlay = cva(
-  "absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-500 blur-xl -z-10",
+  "absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-500 -z-10",
   {
     variants: {
       frozen: {
@@ -40,5 +40,5 @@ export const cardHoverOverlay = cva(
 );
 
 export const cardContainer = cva(
-  "group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-r from-purple-500/10 via-pink-500/5 to-transparent backdrop-blur-sm shadow-lg shadow-purple-500/10",
+  "group relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-r from-purple-500/10 via-pink-500/5 to-transparent shadow-lg shadow-purple-500/10",
 );

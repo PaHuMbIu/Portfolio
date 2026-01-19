@@ -29,7 +29,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 [&:hover,&:active]:underline",
         glow: cn(
           "group relative overflow-hidden justify-start items-center gap-2.5 text-white",
-          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 backdrop-blur-md border",
+          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 border",
           "bg-linear-to-br from-purple-600/30 via-purple-500/20 to-pink-600/30",
           "border-purple-400/40 [&:hover,&:active]:border-purple-400/80",
           "[&:hover,&:active]:from-purple-600/40 [&:hover,&:active]:via-purple-500/30 [&:hover,&:active]:to-pink-600/40",
@@ -45,13 +45,13 @@ const buttonVariants = cva(
         ),
         glowDisabled: cn(
           "group relative overflow-hidden justify-start items-center gap-2.5 text-gray-500",
-          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 backdrop-blur-md border",
+          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 border",
           "cursor-not-allowed pointer-events-none",
           "border-gray-700/30 bg-gray-800/10 opacity-60",
         ),
         glowBlue: cn(
           "group relative overflow-hidden justify-start items-center gap-2.5",
-          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 backdrop-blur-md border",
+          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 border",
           "text-white bg-linear-to-br from-blue-600/30 via-cyan-500/20 to-teal-600/30",
           "border-blue-400/40 [&:hover,&:active]:border-blue-400/80",
           "[&:hover,&:active]:from-blue-600/40 [&:hover,&:active]:via-cyan-500/30 [&:hover,&:active]:to-teal-600/40",
@@ -67,7 +67,7 @@ const buttonVariants = cva(
         ),
         glowBlueDisabled: cn(
           "group relative overflow-hidden justify-start items-center gap-2.5",
-          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 backdrop-blur-md border",
+          "sm:px-6 sm:py-3.5 px-4 py-2.5 rounded-xl transition-all duration-500 border",
           "text-gray-500 cursor-not-allowed pointer-events-none",
           "border-gray-700/30 bg-gray-800/10 opacity-60",
         ),
@@ -77,12 +77,12 @@ const buttonVariants = cva(
         ),
         menuItem: cn(
           "group relative flex items-center overflow-hidden border-l-2 border-l-transparent gap-x-1 rounded-md w-full h-[40px] px-1 transition-all duration-300 ease-in-out",
-          "[&:hover,&:active]:bg-linear-to-r [&:hover,&:active]:from-purple-400/30 [&:hover,&:active]:via-purple-600/20 [&:hover,&:active]:to-transparent [&:hover,&:active]:shadow-[0_4px_15px_rgba(138,43,226,0.3)] [&:hover,&:active]:border-l-purple-300/50 [&:hover,&:active]:translate-x-1",
+          "[&:hover,&:active]:bg-linear-to-r [&:hover,&:active]:from-purple-400/30 [&:hover,&:active]:via-purple-600/20 [&:hover,&:active]:to-transparent md:[&:hover,&:active]:shadow-[0_4px_15px_rgba(138,43,226,0.3)] [&:hover,&:active]:border-l-purple-300/50 md:[&:hover,&:active]:translate-x-1",
         ),
         menuItemActive: cn(
           "group relative flex items-center overflow-hidden border-l-2 border-l-transparent gap-x-1 rounded-md w-full h-[40px] px-1 transition-all duration-300 ease-in-out",
-          "bg-linear-to-r from-purple-400/40 via-purple-600/25 to-transparent shadow-[0_4px_20px_rgba(138,43,226,0.4)] border-l-purple-300/80 translate-x-0.5",
-          "active:from-purple-400/50 active:via-purple-600/35 active:to-transparent active:shadow-[0_4px_25px_rgba(138,43,226,0.5)] active:border-l-purple-300/90",
+          "bg-linear-to-r from-purple-400/40 via-purple-600/25 to-transparent shadow-none md:shadow-[0_4px_20px_rgba(138,43,226,0.4)] border-l-purple-300/80 translate-x-0 md:translate-x-0.5",
+          "active:from-purple-400/50 active:via-purple-600/35 active:to-transparent active:shadow-none md:active:shadow-[0_4px_25px_rgba(138,43,226,0.5)] active:border-l-purple-300/90",
         ),
         clear: cn(
           "h-8 w-8 p-0 text-white/60 rounded-md transition-colors duration-200",
@@ -96,7 +96,7 @@ const buttonVariants = cva(
           "bg-purple-500/5 [&:hover,&:active]:bg-purple-500/10!",
           "[&:hover,&:active]:border-purple-500/50",
           "transition-all duration-200",
-          "backdrop-blur-sm whitespace-nowrap",
+          "whitespace-nowrap",
         ),
       },
       hover: {

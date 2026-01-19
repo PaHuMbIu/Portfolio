@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "./shadows.css";
 @import "./base.css";
 @import "./slider.css";
 @import "./technology-card.css";

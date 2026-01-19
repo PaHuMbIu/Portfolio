@@ -45,7 +45,7 @@ export const BurgerMenu = () => {
         <SheetTitle className="sr-only">Navigation menu</SheetTitle>
         <SheetDescription className="sr-only">Main navigation menu for the site</SheetDescription>
 
-        <nav className="flex flex-col gap-2 mt-8">
+        <nav className="flex flex-col gap-2 mt-8 pl-2.5">
           {NAV_ITEMS.map((item) => {
             const hrefWithLocale = `/${locale}${item.href}`;
 

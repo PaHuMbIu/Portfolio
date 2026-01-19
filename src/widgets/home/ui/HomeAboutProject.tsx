@@ -21,7 +21,7 @@ export const HomeAboutProject = () => {
         ease: "easeOut",
       }}
     >
-      <div className="relative w-full md:p-8 p-4 rounded-2xl bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
+      <div className="relative w-full md:p-8 p-4 rounded-2xl bg-linear-to-br from-white/5 to-white/0 border border-white/10 hover:border-white/20 transition-all duration-300">
         <div className="flex flex-col items-center">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="p-2 rounded-lg bg-linear-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30">

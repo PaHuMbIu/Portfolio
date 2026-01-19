@@ -230,7 +230,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
           className={cn(
-            "bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm",
+            "bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-lg",
             "border-r border-purple-400/20 custom-sidebar-styled pt-[68px]! bg-[rgba(138, 43, 226, 0.031)]! group px-5 py-[10px] z-40",
           )}
         >
@@ -257,7 +257,7 @@ function SidebarTrigger({
       className={cn(
         "absolute right-[-13px] top-[77px] z-50",
         "transition-all duration-300 ease-out",
-        "rounded-full bg-purple-500/20 backdrop-blur-sm",
+        "rounded-full bg-purple-500/20",
         "border border-purple-400/30 shadow-lg shadow-purple-500/20",
         "hover:bg-purple-500/30! hover:text-purple-300! hover:border-purple-400/50!",
         "hover:shadow-purple-500/40! hover:scale-110! active:scale-95!",
@@ -309,7 +309,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
       data-slot="sidebar-inset"
       className={cn(
         "bg-background relative flex w-full flex-1 flex-col",
-        "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
+        "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-lg md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
         className,
       )}
       {...props}

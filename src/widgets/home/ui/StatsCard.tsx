@@ -23,7 +23,7 @@ export const StatsCard = ({ Icon, keyId, color, value, index }: StatsCardProps) 
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      <div className="relative xl:p-6 p-4 rounded-2xl bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 [&:hover,&:active]:border-white/20 transition-all duration-300 [&:hover,&:active]:shadow-lg [&:hover,&:active]:shadow-purple-500/20">
+      <div className="relative xl:p-6 p-4 rounded-2xl bg-linear-to-br from-white/5 to-white/0 border border-white/10 [&:hover,&:active]:border-white/20 transition-all duration-300 [&:hover,&:active]:shadow-lg [&:hover,&:active]:shadow-purple-500/20">
         <div className={cn("inline-flex p-3 rounded-xl bg-linear-to-br mb-4 shadow-lg", color)}>
           <Icon className="w-6 h-6 text-white" />
         </div>

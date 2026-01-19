@@ -59,8 +59,10 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
 
         <div className={cardGradientOverlay({ frozen: isFrozen })} />
 
-        <div className={cardShimmerOverlay()}>
-          <div className={cardShimmerEffect()} />
+        <div className="hidden md:block">
+          <div className={cardShimmerOverlay()}>
+            <div className={cardShimmerEffect()} />
+          </div>
         </div>
 
         <div className="absolute inset-0 z-10 flex flex-col justify-end">
@@ -102,7 +104,7 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
       >
         <div
           className={cn(
-            "bg-black/70 backdrop-blur-xl rounded-xl border border-white/30 shadow-xl",
+            "bg-black/70 rounded-xl border border-white/30 shadow-xl",
             "px-2 py-1 sm:px-3 sm:py-1.5",
           )}
         >

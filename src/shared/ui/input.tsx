@@ -10,7 +10,7 @@ const inputVariants = cva(
       variant: {
         default: "",
         glass: cn(
-          "pl-10 pr-10 h-11 bg-white/8 backdrop-blur-md border border-white/10",
+          "pl-10 pr-10 h-11 bg-white/8 border border-white/10",
           "text-white placeholder:text-white/40",
           "shadow-lg shadow-black/20 rounded-lg",
           "transition-all duration-300",
