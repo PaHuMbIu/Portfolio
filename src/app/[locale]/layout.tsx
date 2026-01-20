@@ -23,35 +23,26 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.paveltech.ru"),
 
-  title: "Pavel Tech – Портфолио Frontend-разработчика",
-  description: "Искусство Frontend-разработки. Портфолио проектов на React/TypeScript.",
+  title: "Pavel Tech – Portfolio",
 
   icons: {
     icon: "/logo.svg",
   },
 
   openGraph: {
-    title: "Pavel Tech – Портфолио Frontend-разработчика",
-    description: "Искусство Frontend-разработки. Портфолио проектов на React/TypeScript.",
+    title: "Pavel Tech – Portfolio",
     url: "https://www.paveltech.ru",
     siteName: "Pavel Tech",
     locale: "ru_RU",
     type: "website",
     images: [
       {
-        url: "https://www.paveltech.ru/og-image.png",
+        url: "/logo-preview.png",
         width: 1200,
         height: 630,
         alt: "Pavel Tech Portfolio",
       },
     ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Pavel Tech – Портфолио Frontend-разработчика",
-    description: "Искусство Frontend-разработки. Портфолио проектов на React/TypeScript.",
-    images: ["https://www.paveltech.ru/og-image.png"],
   },
 
   alternates: {

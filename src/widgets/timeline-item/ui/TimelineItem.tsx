@@ -5,14 +5,10 @@ import { useTranslations } from "next-intl";
 import { ITimelineItem } from "@/widgets/timeline/model/timelineData";
 import { RoadLine, CodeLinks, ProjectLinks } from "@/widgets/timeline-item";
 import { cn } from "@/shared/lib/utils";
-import {
-  fadeUpLeft,
-  staggerParagraphs,
-  fadeUpSmall,
-  fadeUpWithDelay,
-  scaleInWithDelay,
-} from "@/shared/animations";
+import { fadeUpLeft, staggerParagraphs, fadeUpWithDelay } from "@/shared/animations";
 import { ProjectCard } from "@/widgets";
+import { MOBILE_WIDTH } from "@/shared/constants";
+import { ReactNode } from "react";
 
 interface TimelineItemProps {
   item: ITimelineItem;
@@ -31,13 +27,7 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
     <div className="relative flex">
       <RoadLine isLast={isLast} />
 
-      <motion.div
-        className="flex-1 pb-4 sm:pb-8"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0 }}
-        variants={fadeUpLeft}
-      >
+      <AnimationWrapper>
         <article
           className={cn(
             "relative rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 border border-white/10 shadow-lg shadow-purple-500/5",
@@ -59,23 +49,16 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
             </div>
 
             <motion.div
-              className={cn(
-                "space-y-2 text-white/80 leading-relaxed",
-                "text-xs sm:text-sm md:text-base",
-              )}
+              className="space-y-2 text-white/80 leading-relaxed text-xs sm:text-sm md:text-base"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={staggerParagraphs}
             >
               {description.map((paragraph, index) => (
-                <motion.p
-                  className="text-white/85 leading-[1.8] tracking-wide"
-                  key={index}
-                  variants={fadeUpSmall}
-                >
+                <p key={index} className="text-white/85 leading-[1.8] tracking-wide">
                   {paragraph}
-                </motion.p>
+                </p>
               ))}
             </motion.div>
           </div>
@@ -83,7 +66,7 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
 
         {(codeLinks || projectLinks) && (
           <motion.div
-            className={cn("pt-2 flex flex-wrap", "gap-2 sm:gap-4")}
+            className="pt-2 flex flex-wrap gap-2 sm:gap-4"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0 }}
@@ -100,24 +83,34 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
         )}
 
         {projectItems && projectItems.length > 0 && (
-          <motion.div
-            className={cn(
-              "mt-4 flex w-full justify-center",
-              "flex-col sm:flex-row",
-              "gap-3 sm:gap-4",
-              "sm:mt-6",
-            )}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={scaleInWithDelay(0.1)}
-          >
+          <div className="mt-4 flex w-full justify-center flex-col sm:flex-row gap-3 sm:gap-4 sm:mt-6">
             {projectItems.map((project, index) => (
               <ProjectCard key={index} project={project} stack={stack || []} />
             ))}
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </AnimationWrapper>
     </div>
+  );
+};
+
+const AnimationWrapper = ({ children }: { children: ReactNode }) => {
+  const isMobile = window.innerWidth < MOBILE_WIDTH;
+
+  return (
+    <>
+      {isMobile ?
+        <div className="flex-1 pb-4 sm:pb-8">{children}</div>
+      : <motion.div
+          className="flex-1 pb-4 sm:pb-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0 }}
+          variants={fadeUpLeft}
+        >
+          {children}
+        </motion.div>
+      }
+    </>
   );
 };
