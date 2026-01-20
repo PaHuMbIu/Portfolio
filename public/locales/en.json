@@ -1,6 +1,8 @@
 {
   "header": {
-    "projects": "Projects"
+    "projects": "Projects",
+    "removeSkyStar": "Remove starry sky",
+    "showSkyStar": "Show starry sky"
   },
   "sidebar": {
     "Home page": "Home page",

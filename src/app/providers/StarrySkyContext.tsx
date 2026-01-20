@@ -1,10 +1,10 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 interface StarrySkyContextProps {
   isEnabled: boolean;
-  toggle: () => void;
+  toggleSkyStar: () => void;
 }
 
 const StarrySkyContext = createContext<StarrySkyContextProps | null>(null);
@@ -19,11 +19,11 @@ export function useStarrySky() {
 }
 
 interface StarrySkyProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   defaultEnabled?: boolean;
 }
 
-export function StarrySkyProvider({ children, defaultEnabled = true }: StarrySkyProviderProps) {
+export function StarrySkyProvider({ children, defaultEnabled = false }: StarrySkyProviderProps) {
   const [isEnabled, setIsEnabled] = useState<boolean>(defaultEnabled);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -35,7 +35,7 @@ export function StarrySkyProvider({ children, defaultEnabled = true }: StarrySky
     }
   }, []);
 
-  const toggle = () => {
+  const toggleSkyStar = () => {
     const newState = !isEnabled;
     setIsEnabled(newState);
     if (isMounted) {
@@ -44,6 +44,8 @@ export function StarrySkyProvider({ children, defaultEnabled = true }: StarrySky
   };
 
   return (
-    <StarrySkyContext.Provider value={{ isEnabled, toggle }}>{children}</StarrySkyContext.Provider>
+    <StarrySkyContext.Provider value={{ isEnabled, toggleSkyStar }}>
+      {children}
+    </StarrySkyContext.Provider>
   );
 }

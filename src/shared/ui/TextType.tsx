@@ -58,8 +58,10 @@ export const TextType = ({
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const cursorRef = useRef<HTMLSpanElement>(null);
   const containerRef = useRef<HTMLElement>(null);
+  const cursorAnimationRef = useRef<gsap.core.Tween | null>(null);
 
   const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
 
@@ -93,17 +95,35 @@ export const TextType = ({
   }, [startOnVisible]);
 
   useEffect(() => {
-    if (showCursor && cursorRef.current) {
-      gsap.set(cursorRef.current, { opacity: 1 });
-      gsap.to(cursorRef.current, {
-        opacity: 0,
-        duration: cursorBlinkDuration,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-      });
+    if (!showCursor || !cursorRef.current) return;
+
+    // Останавливаем предыдущую анимацию, если она есть
+    if (cursorAnimationRef.current) {
+      cursorAnimationRef.current.kill();
     }
-  }, [showCursor, cursorBlinkDuration]);
+
+    // Если анимация завершена и loop=false, скрываем курсор
+    if (isAnimationComplete && !loop) {
+      gsap.set(cursorRef.current, { opacity: 0 });
+      return;
+    }
+
+    // Запускаем анимацию мигания курсора
+    gsap.set(cursorRef.current, { opacity: 1 });
+    cursorAnimationRef.current = gsap.to(cursorRef.current, {
+      opacity: 0,
+      duration: cursorBlinkDuration,
+      repeat: -1,
+      yoyo: true,
+      ease: "power2.inOut",
+    });
+
+    return () => {
+      if (cursorAnimationRef.current) {
+        cursorAnimationRef.current.kill();
+      }
+    };
+  }, [showCursor, cursorBlinkDuration, isAnimationComplete, loop]);
 
   useEffect(() => {
     if (!isVisible) return;
@@ -143,7 +163,11 @@ export const TextType = ({
             variableSpeed ? getRandomSpeed() : typingSpeed,
           );
         } else if (textArray.length >= 1) {
-          if (!loop && currentTextIndex === textArray.length - 1) return;
+          if (!loop && currentTextIndex === textArray.length - 1) {
+            // Анимация завершена - скрываем курсор
+            setIsAnimationComplete(true);
+            return;
+          }
           timeout = setTimeout(() => {
             setIsDeleting(true);
           }, pauseDuration);
@@ -176,7 +200,8 @@ export const TextType = ({
   ]);
 
   const shouldHideCursor =
-    hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
+    (hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting))
+    || (isAnimationComplete && !loop);
 
   return createElement(
     Component,

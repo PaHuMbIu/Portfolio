@@ -3,13 +3,15 @@
 import { Github, Send, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { LanguageSwitcher } from "@/features/language-switch/ui/LanguageSwitcher";
-import { Button } from "@/shared/ui";
+import { Button, Tooltip, TooltipTrigger, TooltipContent } from "@/shared/ui";
 import { BurgerMenu } from "@/widgets";
 import { useStarrySky } from "@/app/providers";
 import { cn } from "@/shared/lib/utils";
+import { useTranslations } from "next-intl";
 
 export const Header = () => {
-  const { isEnabled, toggle } = useStarrySky();
+  const { isEnabled, toggleSkyStar } = useStarrySky();
+  const t = useTranslations("header");
 
   return (
     <header className="sticky top-0 left-0 right-0 pt-0 z-50 bg-[#8A2BE208] backdrop-blur-xl">
@@ -19,14 +21,24 @@ export const Header = () => {
 
           <hr className="w-px h-6 bg-neutral-700 mx-1" />
 
-          <Button variant="bordered" onClick={toggle}>
-            <Sparkles
-              className={cn(
-                "w-4 h-4 transition-colors duration-200",
-                isEnabled ? "text-purple-400" : "text-neutral-400 group-hover:text-purple-400",
-              )}
-            />
-          </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="bordered" onClick={toggleSkyStar}>
+                <Sparkles
+                  className={cn(
+                    "w-4 h-4 transition-colors duration-200",
+                    isEnabled ? "text-purple-400" : (
+                      "text-neutral-400 group-[&hover, &:active]:text-purple-400"
+                    ),
+                  )}
+                />
+              </Button>
+            </TooltipTrigger>
+
+            <TooltipContent>
+              <p>{isEnabled ? t("removeSkyStar") : t("showSkyStar")}</p>
+            </TooltipContent>
+          </Tooltip>
 
           <hr className="w-px h-6 bg-neutral-700 mx-1" />
 

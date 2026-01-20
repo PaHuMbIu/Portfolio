@@ -44,7 +44,7 @@ export const TechnologyCard = ({ icon, technologyName, description, url }: Techn
             <div className="w-16 h-px bg-linear-to-r from-transparent via-purple-400/60 to-transparent mb-3 mt-1"></div>
 
             <div className="flex w-full h-full">
-              <p className="text-white/85 text-sm text-center leading-relaxed text-balance max-w-full px-1">
+              <p className="text-white/85 text-sm text-center leading-relaxed text-balance max-w-full px-1 select-none">
                 {description}
               </p>
             </div>

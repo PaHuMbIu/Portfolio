@@ -16,7 +16,6 @@ export { TechnologuCardSmall } from "./technology-card/ui/TechnologuCardSmall";
 export { TechnologySlider } from "./technology-slider/ui/TechnologySlider";
 export { TechnologyList } from "./technology-list/ui/TechnologyList";
 export { StatsCard } from "./home/ui/StatsCard";
-export { AnimatedHeroText } from "./home/ui/AnimatedHeroText";
 export { Timeline } from "./timeline";
 export { TimelineFooter } from "./timeline-footer";
 export { ProjectsGallery } from "./projects-gallery";

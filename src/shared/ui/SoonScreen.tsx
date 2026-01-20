@@ -11,7 +11,7 @@ export function SoonScreen() {
     <main className="w-full mx-auto max-w-[1200px] h-[80vh] flex items-center justify-center">
       <section className="w-full max-w-2xl mx-auto px-4">
         <motion.div
-          className="relative w-full md:p-12 p-8 rounded-2xl bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 hover:border-white/20"
+          className="relative w-full md:p-12 p-8 rounded-2xl bg-linear-to-br from-white/5 to-white/0 border border-white/10 hover:border-white/20"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{

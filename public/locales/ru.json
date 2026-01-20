@@ -1,6 +1,8 @@
 {
   "header": {
-    "projects": "Проекты"
+    "projects": "Проекты",
+    "removeSkyStar": "Убрать звездное небо",
+    "showSkyStar": "Показать звездное небо"
   },
   "sidebar": {
     "Home page": "Главная",

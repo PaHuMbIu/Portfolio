@@ -18,3 +18,4 @@ export * from "./staggerParagraphs";
 export * from "./shimmerSlide";
 export * from "./iconWiggle";
 export * from "./bounceUp";
+export * from "./fadeUp30";

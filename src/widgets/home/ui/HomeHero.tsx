@@ -2,8 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { AnimatedHeroText } from "./AnimatedHeroText";
-import { staggerFade } from "@/shared/animations";
+import { fadeUp30 } from "@/shared/animations";
 
 export const HomeHero = () => {
   const t = useTranslations("home");
@@ -11,23 +10,19 @@ export const HomeHero = () => {
   return (
     <div className="flex flex-col items-center max-w-4xl w-full mb-12 mx-auto">
       <motion.h1
-        className="text-white text-2xl md:text-5xl lg:text-6xl font-bold text-center md:mb-8 mb-4 md:pt-14 pt-2"
-        variants={staggerFade}
+        className="text-white text-2xl md:text-5xl lg:text-6xl font-bold text-center md:mb-8 mb-4 md:pt-4 pt-2"
+        variants={fadeUp30}
         initial="hidden"
         animate="visible"
       >
-        <AnimatedHeroText text={t("title")} />
+        {t("title")}
       </motion.h1>
 
       <motion.p
         className="text-sm md:text-xl text-center text-white/80 max-w-2xl leading-relaxed mb-6"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.3,
-          ease: "easeOut",
-        }}
+        variants={fadeUp30}
+        initial="hidden"
+        animate="visible"
       >
         {t("subtitle")}
       </motion.p>

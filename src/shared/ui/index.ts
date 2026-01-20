@@ -13,3 +13,4 @@ export * from "./select";
 export * from "./popover";
 export * from "./checkbox";
 export * from "./SoonScreen";
+export * from "./tooltip";

@@ -7,4 +7,3 @@ export { CTA_BUTTONS_DATA, type ICTAButtonData } from "./model/ctaData";
 export { CTAButton } from "./ui/CTAButton";
 export { STATS_DATA, type IStatsData } from "./model/statsData";
 export { StatsCard } from "./ui/StatsCard";
-export { AnimatedHeroText } from "./ui/AnimatedHeroText";
