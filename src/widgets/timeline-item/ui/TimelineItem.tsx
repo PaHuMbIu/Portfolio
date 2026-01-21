@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { ITimelineItem } from "@/widgets/timeline/model/timelineData";
 import { RoadLine, CodeLinks, ProjectLinks } from "@/widgets/timeline-item";
 import { cn } from "@/shared/lib/utils";
-import { fadeUpLeft, staggerParagraphs, fadeUpWithDelay } from "@/shared/animations";
+import { staggerParagraphs, fadeUpWithDelay, fadeUpLeft } from "@/shared/animations";
 import { ProjectCard } from "@/widgets";
 import { MOBILE_WIDTH } from "@/shared/constants";
 import { ReactNode } from "react";
@@ -28,73 +28,75 @@ export const TimelineItem = ({ item, isLast = false }: TimelineItemProps) => {
       <RoadLine isLast={isLast} />
 
       <AnimationWrapper>
-        <article
-          className={cn(
-            "relative rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 border border-white/10 shadow-lg shadow-purple-500/5",
-            "p-3 sm:p-4 md:p-5",
-          )}
-        >
-          <div className="absolute inset-0 rounded-xl bg-linear-to-tr from-purple-600/10 via-transparent to-transparent pointer-events-none" />
+        <div className="flex-1 pb-4 sm:pb-8">
+          <article
+            className={cn(
+              "relative rounded-xl bg-linear-to-br from-white/5 to-purple-500/5 border border-white/10 shadow-lg shadow-purple-500/5",
+              "p-3 sm:p-4 md:p-5",
+            )}
+          >
+            <div className="absolute inset-0 rounded-xl bg-linear-to-tr from-purple-600/10 via-transparent to-transparent pointer-events-none" />
 
-          <div className="relative z-10">
-            <div className="mb-2">
-              <h3 className={cn("font-bold text-white mb-1", "text-lg sm:text-xl md:text-2xl")}>
-                {title}
-              </h3>
-              <time
-                className={cn("text-purple-400 font-medium", "text-xs sm:text-sm md:text-base")}
+            <div className="relative z-10">
+              <div className="mb-2">
+                <h3 className={cn("font-bold text-white mb-1", "text-lg sm:text-xl md:text-2xl")}>
+                  {title}
+                </h3>
+                <time
+                  className={cn("text-purple-400 font-medium", "text-xs sm:text-sm md:text-base")}
+                >
+                  {date}
+                </time>
+              </div>
+
+              <motion.div
+                className="space-y-2 text-white/80 leading-relaxed text-xs sm:text-sm md:text-base"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={staggerParagraphs}
               >
-                {date}
-              </time>
+                {description.map((paragraph, index) => (
+                  <p key={index} className="text-white/85 leading-[1.8] tracking-wide">
+                    {paragraph}
+                  </p>
+                ))}
+              </motion.div>
             </div>
+          </article>
 
+          {(codeLinks || projectLinks) && (
             <motion.div
-              className="space-y-2 text-white/80 leading-relaxed text-xs sm:text-sm md:text-base"
+              className="pt-2 flex flex-wrap gap-2 sm:gap-4"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerParagraphs}
+              viewport={{ once: true, amount: 0 }}
+              variants={fadeUpWithDelay(0.3)}
             >
-              {description.map((paragraph, index) => (
-                <p key={index} className="text-white/85 leading-[1.8] tracking-wide">
-                  {paragraph}
-                </p>
+              {codeLinks?.map((link, index) => (
+                <CodeLinks key={index} link={link} />
+              ))}
+
+              {projectLinks?.map((link, index) => (
+                <ProjectLinks key={index} link={link} />
               ))}
             </motion.div>
-          </div>
-        </article>
+          )}
 
-        {(codeLinks || projectLinks) && (
-          <motion.div
-            className="pt-2 flex flex-wrap gap-2 sm:gap-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0 }}
-            variants={fadeUpWithDelay(0.3)}
-          >
-            {codeLinks?.map((link, index) => (
-              <CodeLinks key={index} link={link} />
-            ))}
-
-            {projectLinks?.map((link, index) => (
-              <ProjectLinks key={index} link={link} />
-            ))}
-          </motion.div>
-        )}
-
-        {projectItems && projectItems.length > 0 && (
-          <div className="mt-4 flex w-full justify-center flex-col sm:flex-row gap-3 sm:gap-4 sm:mt-6">
-            {projectItems.map((project, index) => (
-              <ProjectCard key={index} project={project} stack={stack || []} />
-            ))}
-          </div>
-        )}
+          {projectItems && projectItems.length > 0 && (
+            <div className="mt-4 flex w-full justify-center flex-col sm:flex-row gap-3 sm:gap-4 sm:mt-6">
+              {projectItems.map((project, index) => (
+                <ProjectCard key={index} project={project} stack={stack || []} />
+              ))}
+            </div>
+          )}
+        </div>
       </AnimationWrapper>
     </div>
   );
 };
 
-const AnimationWrapper = ({ children }: { children: ReactNode }) => {
+export const AnimationWrapper = ({ children }: { children: ReactNode }) => {
   const isMobile = window.innerWidth < MOBILE_WIDTH;
 
   return (

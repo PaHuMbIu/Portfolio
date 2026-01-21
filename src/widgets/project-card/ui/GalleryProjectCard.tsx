@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { cn } from "@/shared/lib/utils";
 import {
   cardContainer,
-  cardOverlay,
   cardGradientOverlay,
   cardShimmerOverlay,
   cardShimmerEffect,
@@ -36,7 +35,7 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
   const isFrozen = projectUrl === "Frozen";
 
   return (
-    <motion.article key={projectName} className={cn(cardContainer(), "aspect-5/3")}>
+    <article key={projectName} className={cn(cardContainer(), "aspect-5/3")}>
       <ul
         className={cn(
           "absolute z-10 top-0 group-[&:hover,&:active]:opacity-0 transition-opacity duration-300",
@@ -46,15 +45,14 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
         <TechStack stack={stack} />
       </ul>
 
-      <div className={cardOverlay({ frozen: isFrozen })} />
-
       <div className="relative overflow-hidden rounded-2xl h-full">
         <Image
           src={projectImage}
           alt={projectName}
           width={500}
           height={400}
-          className="w-full h-full object-cover transition-all duration-700 group-[&:hover,&:active]:scale-110 group-[&:hover,&:active]:brightness-110"
+          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+          className="w-full h-full object-cover transition-all duration-700 group-[&:hover,&:active]:scale-110"
         />
 
         <div className={cardGradientOverlay({ frozen: isFrozen })} />
@@ -113,6 +111,6 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
           </p>
         </div>
       </motion.div>
-    </motion.article>
+    </article>
   );
 };

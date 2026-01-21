@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
   devIndicators: {
     position: "bottom-right",
   },
-  output: "export",
 }
 
 export default withNextIntl(nextConfig);
