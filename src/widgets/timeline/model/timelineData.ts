@@ -1,4 +1,3 @@
-import { ICodeLink, IProjectLink, IProjectItem } from "@/shared/types/projects/IProjects";
 import {
   IRobotImage,
   CalculatorImage,
@@ -8,12 +7,28 @@ import {
   FilmHubImage,
   LoftHausImage,
   CasperGarant,
-  Tonex,
 } from "@/shared/images/projects";
+
+import { StaticImageData } from "next/image";
+
+export interface ICodeLink {
+  name: string;
+  url: string;
+}
+
+export interface IProjectLink {
+  name: string;
+  url: string;
+}
+
+export interface IProjectItem {
+  name: string;
+  image: StaticImageData;
+  url: string;
+}
 
 export interface ITimelineItem {
   id: string;
-  stack?: string[];
   codeLinks?: ICodeLink[];
   projectLinks?: IProjectLink[];
   projectItems?: IProjectItem[];
@@ -25,7 +40,6 @@ export const TIMELINE_DATA: ITimelineItem[] = [
   },
   {
     id: "2",
-    stack: ["HTML", "CSS", "JavaScript"],
     codeLinks: [{ name: "LoftHouse", url: "https://github.com/PaHuMbIu/Layout_LoftHouse" }],
     projectLinks: [{ name: "LoftHouse", url: "https://pahumbiu.github.io/Layout_LoftHouse/" }],
     projectItems: [
@@ -41,7 +55,6 @@ export const TIMELINE_DATA: ITimelineItem[] = [
     projectItems: [
       { name: "Calculator", image: CalculatorImage, url: "https://pahumbiu.github.io/Calculator/" },
     ],
-    stack: ["HTML", "CSS", "JavaScript"],
     codeLinks: [{ name: "Calculator", url: "https://github.com/PaHuMbIu/Calculator" }],
     projectLinks: [{ name: "Calculator", url: "https://pahumbiu.github.io/Calculator/" }],
   },
@@ -50,7 +63,6 @@ export const TIMELINE_DATA: ITimelineItem[] = [
     projectItems: [
       { name: "VirusTotal", image: VirusTotalImage, url: "https://pahumbiu.github.io/VirusTotal/" },
     ],
-    stack: ["React", "CSS"],
     codeLinks: [
       { name: "VirusTotal", url: "https://github.com/PaHuMbIu/VirusTotal?tab=readme-ov-file" },
     ],
@@ -61,7 +73,6 @@ export const TIMELINE_DATA: ITimelineItem[] = [
     projectItems: [
       { name: "TimeCraft", image: TimeCraftImage, url: "http://timecraft.delfinnnn.online" },
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
     codeLinks: [
       { name: "TimeCraft", url: "https://github.com/PaHuMbIu/TimeCraft_JS?tab=readme-ov-file" },
     ],
@@ -76,7 +87,6 @@ export const TIMELINE_DATA: ITimelineItem[] = [
         url: "http://timecraft-react.delfinnnn.online/",
       },
     ],
-    stack: ["React", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
     codeLinks: [{ name: "TimeCraft React", url: "https://github.com/PaHuMbIu/TimeCraft_React" }],
     projectLinks: [{ name: "TimeCraft React", url: "http://timecraft-react.delfinnnn.online/" }],
   },
@@ -85,32 +95,22 @@ export const TIMELINE_DATA: ITimelineItem[] = [
     projectItems: [
       { name: "iRobot", image: IRobotImage, url: "https://pahumbiu.github.io/iRobot/" },
     ],
-    stack: ["HTML", "SCSS", "JavaScript"],
     codeLinks: [{ name: "iRobot", url: "https://github.com/PaHuMbIu/iRobot" }],
     projectLinks: [{ name: "iRobot", url: "https://pahumbiu.github.io/iRobot/" }],
   },
   {
     id: "8",
-    stack: ["React", "Next.js", "TailwindCSS", "TypeScript", "shadcn/ui", "Zustand"],
     projectItems: [{ name: "FilmHub", image: FilmHubImage, url: "Frozen" }],
     codeLinks: [{ name: "FilmHub", url: "NDA" }],
     projectLinks: [{ name: "FilmHub", url: "NDA" }],
   },
   {
     id: "9",
-    stack: ["React", "TailwindCSS", "TypeScript", "RTK query"],
-    codeLinks: [
-      { name: "CasperGarant", url: "NDA" },
-      { name: "TRONEX-TWA", url: "https://github.com/VladimirBerl/TRONEX-TWA" },
-    ],
+    codeLinks: [{ name: "Casper Garant", url: "NDA" }],
     projectItems: [
-      { name: "CasperGarant", image: CasperGarant, url: "https://t.me/CasperGarantBot" },
-      { name: "Tonex", image: Tonex, url: "https://t.me/tonexfarm_bot" },
+      { name: "Casper Garant", image: CasperGarant, url: "https://t.me/CasperGarantBot" },
     ],
-    projectLinks: [
-      { name: "CasperGarantBot", url: "https://t.me/CasperGarantBot" },
-      { name: "Tonex", url: "https://t.me/tonexfarm_bot" },
-    ],
+    projectLinks: [{ name: "Casper Garant", url: "https://t.me/CasperGarantBot" }],
   },
   {
     id: "10",

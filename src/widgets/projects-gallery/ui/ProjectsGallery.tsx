@@ -22,7 +22,7 @@ export const ProjectsGallery = () => {
   } = useProjectsFilters();
 
   return (
-    <section className="w-full space-y-6 sm:space-y-8">
+    <section className="w-full space-y-6 sm:space-y-8 max-w-[1480px] mx-auto">
       <header className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
           <div className="space-y-4">

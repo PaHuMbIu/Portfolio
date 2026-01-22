@@ -11,7 +11,7 @@ export const Timeline = () => {
   const t = useTranslations("timeline");
 
   return (
-    <div className={cn("w-full max-w-4xl mx-auto", "px-2 pt-6 sm:px-4 sm:pt-12")}>
+    <div className="w-full max-w-4xl mx-auto pt-6 sm:pt-12">
       <motion.h1
         className={cn(
           "font-bold text-white text-center",

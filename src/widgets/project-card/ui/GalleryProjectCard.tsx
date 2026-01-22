@@ -51,7 +51,6 @@ export const GalleryProjectCard = ({ project, stack }: GalleryProjectCardProps) 
           alt={projectName}
           width={500}
           height={400}
-          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
           className="w-full h-full object-cover transition-all duration-700 group-[&:hover,&:active]:scale-110"
         />
 
