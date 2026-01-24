@@ -2,7 +2,7 @@
 
 import { cn } from "@/shared/lib/utils";
 import { motion } from "framer-motion";
-import { ICodeLink } from "@/shared/types/projects/IProjects";
+import { ICodeLink } from "@/widgets/timeline/model/timelineData";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import { Button } from "@/shared/ui/button";
